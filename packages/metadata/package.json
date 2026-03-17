@@ -1,5 +1,5 @@
 {
-    "name": "@boilerplate/metadata",
+    "name": "@openregistre/metadata",
     "type": "module",
     "private": true,
     "scripts": {

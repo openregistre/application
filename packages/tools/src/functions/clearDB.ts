@@ -1,5 +1,5 @@
 import { sql } from 'drizzle-orm'
-import { dbClient } from '../utilities/dbClient.js'
+import { dbClient } from '../utilities/dbClient'
 
 
 async function clearDb() {

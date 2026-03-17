@@ -1,6 +1,1 @@
-import { modelSchemas } from "@boilerplate/metadata/orm"
-
-
-module.exports = {
-    ...modelSchemas
-}
+export * from "@openregistre/metadata/orm"

@@ -1,4 +1,4 @@
-import type { routeDefinition } from "@boilerplate/metadata/utilities"
+import type { routeDefinition } from "@openregistre/metadata/utilities"
 import { useQuery } from "@tanstack/react-query"
 import type * as v from "valibot"
 import { ClientError } from "./clientError.js"

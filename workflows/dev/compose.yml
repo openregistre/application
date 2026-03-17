@@ -4,7 +4,7 @@ x-config:
   postgres-user: &pg-user postgres
   postgres-password: &pg-password admin
   postgres-db: &pg-db default
-  postgres-url: &pg-url postgresql://postgres:admin@boilerplate-postgres:5432/default
+  postgres-url: &pg-url postgresql://postgres:admin@openregistre-postgres:5432/default
 
 
 services:
@@ -13,8 +13,8 @@ services:
   # ============================================================================
 
   # PostgreSQL - Relational database for application data
-  boilerplate-postgres:
-    container_name: boilerplate-postgres
+  openregistre-postgres:
+    container_name: openregistre-postgres
     image: postgres:18.3
     restart: unless-stopped
     environment:
@@ -36,9 +36,9 @@ services:
   # ============================================================================
 
   # API - Backend service
-  boilerplate-api:
-    container_name: boilerplate-api
-    image: boilerplate-api
+  openregistre-api:
+    container_name: openregistre-api
+    image: openregistre-api
     build:
       context: ../..
       dockerfile: ./workflows/dev/api/Dockerfile
@@ -53,12 +53,14 @@ services:
       # Auth
       CORS_ORIGIN: http://localhost:19003
       COOKIES_DOMAIN: localhost
-      COOKIES_KEY: boilerplate-dev-secret-key-change-in-production
+      COOKIES_KEY: openregistre-dev-secret-key-change-in-production
       # URLs
       API_BASE_URL: http://api:3000
       WEBSITE_BASE_URL: http://localhost:19003
       # Database
       SQL_DATABASE_URL: *pg-url
+      # Admin
+      ADMIN_API_KEY: openregistre-dev-admin-api-key
       # Tools (used by migrate/seed scripts)
       NODE_ENV: development
     ports:
@@ -70,13 +72,13 @@ services:
       # to avoid creating an application/dev/ directory on the host
       - .:/dev-scripts:cached
     depends_on:
-      boilerplate-postgres:
+      openregistre-postgres:
         condition: service_healthy
 
   # Website - Frontend interface (React + Vite)
-  boilerplate-website:
-    container_name: boilerplate-website
-    image: boilerplate-website
+  openregistre-website:
+    container_name: openregistre-website
+    image: openregistre-website
     build:
       context: ../..
       dockerfile: ./workflows/dev/website/Dockerfile

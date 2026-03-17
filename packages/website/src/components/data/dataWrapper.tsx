@@ -1,4 +1,4 @@
-import type { routeDefinition } from "@boilerplate/metadata/utilities"
+import type { routeDefinition } from "@openregistre/metadata/utilities"
 import { Fragment, useMemo, type ComponentProps, type ReactElement } from "react"
 import * as v from "valibot"
 import { css, cx } from "../../../styled-system/css"

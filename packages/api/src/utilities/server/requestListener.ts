@@ -13,7 +13,7 @@ export async function requestListener(request: IncomingMessage, response: Server
 
         response.setHeader('Access-Control-Allow-Origin', Environment.CORS_ORIGIN)
         response.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS')
-        response.setHeader('Access-Control-Allow-Headers', ['Content-Type', "x-api-key"])
+        response.setHeader('Access-Control-Allow-Headers', ['Content-Type', "Authorization"])
         response.setHeader('Access-Control-Allow-Credentials', String(true))
 
         if (request.method === 'OPTIONS') {
@@ -63,7 +63,7 @@ export async function requestListener(request: IncomingMessage, response: Server
             responseBody = JSON.stringify(fetchResponse.bodyValue)
         }
         catch (error: unknown) {
-            if (Environment.ENV === "production") {
+            if (Environment.ENV !== "production") {
                 console.log(error)
             }
             if (error instanceof Exception) {

@@ -1,5 +1,5 @@
 {
-    "name": "@boilerplate/tools",
+    "name": "@openregistre/tools",
     "type": "module",
     "private": true,
     "scripts": {
@@ -7,6 +7,7 @@
         "push": "pnpm drizzle-kit push --config=./src/drizzle.config.ts",
         "pull": "pnpm drizzle-kit introspect --config=./src/drizzle.config.ts",
         "migrate": "pnpm drizzle-kit migrate --config=./src/drizzle.config.ts",
+        "migration": "tsx --env-file=.env ./src/functions/migration.ts",
         "seed": "tsx --env-file=.env ./src/functions/seed.ts",
         "clear": "tsx --env-file=.env ./src/functions/clearDB.ts",
         "drop": "pnpm drizzle-kit drop --config=./src/drizzle.config.ts"
@@ -19,7 +20,7 @@
         "typescript": "5.9.3"
     },
     "dependencies": {
-        "@boilerplate/metadata": "workspace:*",
+        "@openregistre/metadata": "workspace:*",
         "drizzle-orm": "0.45.1",
         "valibot": "1.2.0"
     }

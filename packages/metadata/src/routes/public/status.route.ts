@@ -1,6 +1,6 @@
 import * as v from "valibot"
-import { booleanSchema } from "../../components/schemas/booleanSchema.js"
-import { routeDefinition } from "../../utilities/index.js"
+import { booleanSchema } from "../../components/schemas/booleanSchema"
+import { routeDefinition } from "../../utilities/index"
 
 
 export const statusRouteDefinition = routeDefinition({

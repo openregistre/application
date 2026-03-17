@@ -1,5 +1,5 @@
 {
-    "name": "@boilerplate/website",
+    "name": "@openregistre/website",
     "type": "module",
     "private": true,
     "scripts": {
@@ -10,7 +10,7 @@
         "preview": "vite preview"
     },
     "dependencies": {
-        "@boilerplate/metadata": "workspace:*",
+        "@openregistre/metadata": "workspace:*",
         "@hookform/resolvers": "5.2.2",
         "@tabler/icons-react": "3.36.0",
         "@tanstack/react-form": "1.27.6",

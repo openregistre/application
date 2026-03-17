@@ -1,4 +1,4 @@
-import { statusRouteDefinition } from "@boilerplate/metadata/routes"
+import { statusRouteDefinition } from "@openregistre/metadata/routes"
 import { routeHandler } from "../../utilities/api/routeHandler.js"
 import { routeResponse } from "../../utilities/route/routeResponse.js"
 

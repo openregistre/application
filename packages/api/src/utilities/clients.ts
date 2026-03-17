@@ -1,4 +1,4 @@
-import { modelSchemas } from '@boilerplate/metadata/orm'
+import { modelSchemas } from '@openregistre/metadata/orm'
 import { postgresqlClient } from "../clients/postgresql.client.js"
 import { Environment } from "./environment.js"
 

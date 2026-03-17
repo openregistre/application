@@ -1,4 +1,4 @@
-import { readUserSessionRouteDefinition } from "@boilerplate/metadata/routes"
+import { readUserSessionRouteDefinition } from "@openregistre/metadata/routes"
 import { checkUserSessionMiddleware } from "../../../middlewares/checkUserSession.middleware.js"
 import { routeHandler } from "../../../utilities/api/routeHandler.js"
 import { routeResponse } from "../../../utilities/route/routeResponse.js"

@@ -1,4 +1,4 @@
-import type { routeDefinition } from "@boilerplate/metadata/utilities"
+import type { routeDefinition } from "@openregistre/metadata/utilities"
 import type * as v from "valibot"
 import { toast } from "../contexts/toasts/useToast.js"
 import { ClientError } from "./clientError.js"

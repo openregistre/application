@@ -1,5 +1,5 @@
 # ==============================================================================
-# boilerplate Platform - Production Environment
+# openregistre Platform - Production Environment
 # ==============================================================================
 # Docker Compose configuration for production deployment
 #
@@ -23,8 +23,8 @@
 
 services:
   # API - Backend service
-  boilerplate-api:
-    image: boilerplate-api:${VERSION:-latest}
+  openregistre-api:
+    image: openregistre-api:${VERSION:-latest}
     build:
       context: ../..
       dockerfile: ./workflows/build/api/Dockerfile
@@ -37,8 +37,8 @@ services:
     restart: unless-stopped
 
   # Website - Frontend (static build served by Nginx)
-  boilerplate-website:
-    image: boilerplate-website:${VERSION:-latest}
+  openregistre-website:
+    image: openregistre-website:${VERSION:-latest}
     build:
       context: ../..
       dockerfile: ./workflows/build/website/Dockerfile

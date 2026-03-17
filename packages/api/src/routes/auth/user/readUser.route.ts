@@ -1,5 +1,5 @@
-import { models } from "@boilerplate/metadata/orm"
-import { readUserRouteDefinition } from "@boilerplate/metadata/routes"
+import { models } from "@openregistre/metadata/orm"
+import { readUserRouteDefinition } from "@openregistre/metadata/routes"
 import { eq } from "drizzle-orm"
 import { checkUserSessionMiddleware } from "../../../middlewares/checkUserSession.middleware.js"
 import { routeHandler } from "../../../utilities/api/routeHandler.js"

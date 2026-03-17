@@ -1,6 +1,6 @@
-# robots.txt for https://console.boilerplate.com
+# robots.txt for https://console.openregistre.com
 
 User-agent: *
 Allow: /
 
-Sitemap: https://console.boilerplate.com/sitemap.xml
+Sitemap: https://console.openregistre.com/sitemap.xml

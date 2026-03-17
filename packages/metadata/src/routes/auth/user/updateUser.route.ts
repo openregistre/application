@@ -1,5 +1,5 @@
 import * as v from "valibot"
-import { routeDefinition } from "../../../utilities/index.js"
+import { routeDefinition } from "../../../utilities/index"
 
 
 export const updateUserRouteDefinition = routeDefinition({

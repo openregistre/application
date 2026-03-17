@@ -1,4 +1,4 @@
-import { signUpRouteDefinition } from "@boilerplate/metadata/routes"
+import { signUpRouteDefinition } from "@openregistre/metadata/routes"
 import { IconBook2, IconLogin2, IconUserPlus } from "@tabler/icons-react"
 import { Fragment } from "react/jsx-runtime"
 import { css } from "../../../styled-system/css/css.js"

@@ -1,4 +1,4 @@
-import type { readUserSessionRouteDefinition } from "@boilerplate/metadata/routes"
+import type { readUserSessionRouteDefinition } from "@openregistre/metadata/routes"
 import { createRootRouteWithContext, useRouterState } from "@tanstack/react-router"
 import { Fragment } from "react/jsx-runtime"
 import type * as v from "valibot"
@@ -17,7 +17,7 @@ export const rootLayoutRoute = createRootRouteWithContext<{
 
         const matchWithTitle = [...matches].reverse().find((d) => d.context.title)
 
-        const title = matchWithTitle?.context.title || "Boilerplate"
+        const title = matchWithTitle?.context.title || "OpenRegistre"
 
         return (
             <Fragment>

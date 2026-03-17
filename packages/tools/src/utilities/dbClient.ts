@@ -1,7 +1,7 @@
-import * as platformSchema from '@boilerplate/metadata/orm'
+import * as platformSchema from '@openregistre/metadata/orm'
 import { drizzle } from "drizzle-orm/postgres-js"
 import postgres from "postgres"
-import { env } from './env.js'
+import { env } from './env'
 
 
 export function dbClient() {

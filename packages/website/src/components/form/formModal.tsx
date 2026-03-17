@@ -1,4 +1,4 @@
-import { generateId } from "@boilerplate/metadata/utilities"
+import { generateId } from "@openregistre/metadata/utilities"
 import { valibotResolver } from "@hookform/resolvers/valibot"
 import { IconX } from "@tabler/icons-react"
 import { cloneElement, Fragment, useEffect, useState, type ButtonHTMLAttributes, type ReactElement } from "react"

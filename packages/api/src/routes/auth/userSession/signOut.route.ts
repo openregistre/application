@@ -1,5 +1,5 @@
-import { models } from "@boilerplate/metadata/orm"
-import { signOutRouteDefinition } from "@boilerplate/metadata/routes"
+import { models } from "@openregistre/metadata/orm"
+import { signOutRouteDefinition } from "@openregistre/metadata/routes"
 import { eq } from "drizzle-orm"
 import { routeHandler } from "../../../utilities/api/routeHandler.js"
 import { Clients } from "../../../utilities/clients.js"

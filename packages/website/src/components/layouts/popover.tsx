@@ -1,4 +1,4 @@
-import { generateId } from "@boilerplate/metadata/utilities"
+import { generateId } from "@openregistre/metadata/utilities"
 import { cloneElement, Fragment, useEffect, useRef, useState, type ButtonHTMLAttributes, type Dispatch, type ReactElement, type ReactNode, type RefAttributes, type SetStateAction } from "react"
 import { createPortal } from "react-dom"
 import { css, cx, type Styles } from "../../../styled-system/css"

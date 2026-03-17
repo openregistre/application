@@ -1,5 +1,5 @@
 {
-    "name": "boilerplate",
+    "name": "openregistre",
     "private": true,
     "scripts": {
         "dev": "pnpm --recursive --if-present --parallel --filter='./packages/**' run dev",

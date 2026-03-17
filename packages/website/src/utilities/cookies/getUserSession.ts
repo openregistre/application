@@ -1,4 +1,4 @@
-import { readUserSessionRouteDefinition } from "@boilerplate/metadata/routes"
+import { readUserSessionRouteDefinition } from "@openregistre/metadata/routes"
 import { getResponseBodyFromAPI } from "../getResponseBodyFromAPI.js"
 import { getIsAuthenticated } from "./getIsAuthenticated.js"
 

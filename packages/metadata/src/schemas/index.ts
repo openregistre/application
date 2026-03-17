@@ -1,3 +1,10 @@
-export { userSchema } from "./user.schema.js"
-export { userSessionSchema } from "./userSession.schema.js"
-
+export { factSchema } from "./fact.schema"
+export { personSchema } from "./person.schema"
+export { personPoliticalPartySchema } from "./personPoliticalParty.schema"
+export { personRoleSchema } from "./personRole.schema"
+export { politicalPartySchema } from "./politicalParty.schema"
+export { publisherSchema } from "./publisher.schema"
+export { roleSchema } from "./role.schema"
+export { sourceSchema } from "./source.schema"
+export { userSchema } from "./user.schema"
+export { userSessionSchema } from "./userSession.schema"

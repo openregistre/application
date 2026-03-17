@@ -1,5 +1,5 @@
-import { models } from "@boilerplate/metadata/orm"
-import { updateUserRouteDefinition } from "@boilerplate/metadata/routes"
+import { models } from "@openregistre/metadata/orm"
+import { updateUserRouteDefinition } from "@openregistre/metadata/routes"
 import { and, eq } from "drizzle-orm"
 import { checkUserSessionMiddleware } from "../../../middlewares/checkUserSession.middleware.js"
 import { validateBodyMiddleware } from "../../../middlewares/validateBody.middleware.js"

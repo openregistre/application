@@ -8,5 +8,5 @@ set -e
 
 echo "Seeding demo data..."
 cd /workspace/packages/tools
-pnpm run seed || echo "Seeding skipped (data may already exist)"
+pnpm tsx ./src/functions/seed.ts || echo "Seeding skipped (data may already exist)"
 echo "Seeding complete"

@@ -1,4 +1,4 @@
-import type { routeDefinition } from "@boilerplate/metadata/utilities"
+import type { routeDefinition } from "@openregistre/metadata/utilities"
 import * as v from "valibot"
 import type { routeResponse } from "../route/routeResponse.js"
 import type { BaseContext } from "./baseContext.js"

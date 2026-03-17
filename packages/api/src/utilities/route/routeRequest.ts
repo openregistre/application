@@ -1,4 +1,4 @@
-import type { HTTPMethod } from "@boilerplate/metadata/utilities"
+import type { HTTPMethod } from "@openregistre/metadata/utilities"
 import type { IncomingHttpHeaders } from "http"
 
 type RequestCache =

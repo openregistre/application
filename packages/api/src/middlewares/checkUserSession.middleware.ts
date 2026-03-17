@@ -1,4 +1,4 @@
-import { models } from "@boilerplate/metadata/orm"
+import { models } from "@openregistre/metadata/orm"
 import { eq } from "drizzle-orm"
 import type { BaseContext } from "../utilities/api/baseContext.js"
 import { Clients } from "../utilities/clients.js"

@@ -16,6 +16,8 @@ export class Environment {
 
     static SQL_DATABASE_URL: string
 
+    static ADMIN_API_KEY: string
+
     static async init() {
         const parsedEnvironment = validate({
             schema: v.object({
@@ -31,6 +33,8 @@ export class Environment {
                 WEBSITE_BASE_URL: v.string(),
 
                 SQL_DATABASE_URL: v.string(),
+
+                ADMIN_API_KEY: v.string(),
             }),
             data: process.env,
         })

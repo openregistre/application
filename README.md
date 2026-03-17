@@ -1,2 +1,2 @@
-# Boilerplate
+# OpenRegistre
 

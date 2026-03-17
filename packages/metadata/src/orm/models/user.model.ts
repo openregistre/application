@@ -1,6 +1,6 @@
 import { boolean, index, pgTable, text } from "drizzle-orm/pg-core"
-import { idColumn } from "../../components/models/idColumn.js"
-import { timestampColumn } from "../../components/models/timestampColumn.js"
+import { idColumn } from "../../components/models/idColumn"
+import { timestampColumn } from "../../components/models/timestampColumn"
 
 
 export const userModel = pgTable(
