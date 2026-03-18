@@ -1,7 +1,7 @@
 import { relations } from "drizzle-orm"
-import { factModel } from "../models/fact.model"
-import { publisherModel } from "../models/publisher.model"
-import { sourceModel } from "../models/source.model"
+import { factModel } from "../models/fact.model.js"
+import { publisherModel } from "../models/publisher.model.js"
+import { sourceModel } from "../models/source.model.js"
 
 
 export const sourceRelations = relations(sourceModel, ({ one, many }) => ({

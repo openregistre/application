@@ -3,9 +3,9 @@ import postgres from "postgres"
 import { Exception } from "../utilities/exception.js"
 
 
-export function postgresqlClient(parameters: {
+export function postgresqlClient<TSchema extends Record<string, unknown>>(parameters: {
     url: string
-    schema: Record<string, unknown>
+    schema: TSchema
 }) {
     try {
         const queryClient = postgres(parameters.url)

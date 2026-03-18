@@ -1,9 +1,9 @@
 import * as v from "valibot"
-import { booleanSchema } from "../../../components/schemas/booleanSchema"
-import { idSchema } from "../../../components/schemas/idSchema"
-import { stringArraySchema } from "../../../components/schemas/stringArraySchema"
-import { stringSchema } from "../../../components/schemas/stringSchema"
-import { routeDefinition } from "../../../utilities/index"
+import { booleanSchema } from "../../../components/schemas/booleanSchema.js"
+import { idSchema } from "../../../components/schemas/idSchema.js"
+import { stringArraySchema } from "../../../components/schemas/stringArraySchema.js"
+import { stringSchema } from "../../../components/schemas/stringSchema.js"
+import { routeDefinition } from "../../../utilities/index.js"
 
 
 export const upsertPersonRouteDefinition = routeDefinition({

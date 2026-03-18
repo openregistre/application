@@ -1,10 +1,10 @@
 import { createRoute } from "@tanstack/react-router"
 import { PersonPage } from "../../../features/person/personPage"
-import { rootLayoutRoute } from "../../rootLayoutRoute"
+import { bibliothequeLayoutRoute } from "../bibliotheque/bibliothequeLayoutRoute"
 
 
 export const personRoute = createRoute({
-    getParentRoute: () => rootLayoutRoute,
+    getParentRoute: () => bibliothequeLayoutRoute,
     path: "/personne/$id",
     beforeLoad: () => ({
         title: "Personne",

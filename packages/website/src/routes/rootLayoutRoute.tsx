@@ -17,7 +17,10 @@ export const rootLayoutRoute = createRootRouteWithContext<{
 
         const matchWithTitle = [...matches].reverse().find((d) => d.context.title)
 
-        const title = matchWithTitle?.context.title || "OpenRegistre"
+        const pageTitle = matchWithTitle?.context.title
+        const title = pageTitle && pageTitle !== "OpenRegistre"
+            ? `${pageTitle} - OpenRegistre`
+            : "OpenRegistre"
 
         return (
             <Fragment>

@@ -1,4 +1,4 @@
-import { IconBookFilled } from "@tabler/icons-react"
+import { IconBookmark } from "@tabler/icons-react"
 import { css, type Styles } from "../../../styled-system/css"
 
 
@@ -11,7 +11,6 @@ export function Logo(props: {
                 borderRadius: "50%",
                 width: "3rem",
                 height: "3rem",
-                // backgroundColor: "primary",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -19,9 +18,9 @@ export function Logo(props: {
                 props.className,
             )}
         >
-            <IconBookFilled
+            <IconBookmark
                 className={css({
-                    fill: "primary",
+                    stroke: "primary",
                 })}
             />
         </div>

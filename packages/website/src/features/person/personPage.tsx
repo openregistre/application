@@ -1,5 +1,5 @@
 import { readPersonRouteDefinition } from "@openregistre/metadata/routes"
-import { IconArrowLeft, IconChevronDown, IconChevronRight, IconExternalLink, IconLink } from "@tabler/icons-react"
+import { IconChevronDown, IconChevronRight, IconExternalLink, IconLink } from "@tabler/icons-react"
 import { Link, useParams } from "@tanstack/react-router"
 import { useState } from "react"
 import type * as v from "valibot"
@@ -8,7 +8,7 @@ import { cx } from "../../../styled-system/css/cx"
 import { Button } from "../../components/button/button"
 import { Chip } from "../../components/data/chip"
 import { CircularLoader } from "../../components/circularLoader"
-import { Logo } from "../../components/layouts/logo"
+import { ActionBar } from "../../components/layouts/actionBar"
 import { Separator } from "../../components/layouts/separator"
 import { useDataFromAPI } from "../../utilities/useDataFromAPI"
 
@@ -23,7 +23,7 @@ const factViews: Array<{ key: FactView; label: string }> = [
 ]
 
 export function PersonPage() {
-    const { id } = useParams({ from: "/personne/$id" })
+    const { id } = useParams({ from: "/bibliotheque/personne/$id" })
     const [factView, setFactView] = useState<FactView>("chronologique")
 
     const { data, isLoading } = useDataFromAPI({
@@ -36,11 +36,10 @@ export function PersonPage() {
             <div
                 className={css({
                     width: "100%",
-                    minHeight: "100dvh",
+                    flex: "1",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    backgroundColor: "background",
                 })}
             >
                 <CircularLoader text="Chargement..." />
@@ -53,12 +52,11 @@ export function PersonPage() {
             <div
                 className={css({
                     width: "100%",
-                    minHeight: "100dvh",
+                    flex: "1",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
-                    backgroundColor: "background",
                     gap: "1rem",
                 })}
             >
@@ -83,67 +81,14 @@ export function PersonPage() {
     const currentParties = data.politicalParties.filter((p) => !p.endingAt)
 
     return (
-        <div
-            className={css({
-                width: "100%",
-                minHeight: "100dvh",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "start",
-                alignItems: "start",
-                backgroundColor: "background",
-            })}
-        >
-            {/* Top bar */}
-            <div
-                className={css({
-                    width: "100%",
-                    borderBottomWidth: "1px",
-                    borderBottomColor: "neutral/10",
-                    backgroundColor: "white",
-                })}
-            >
-                <div
-                    className={css({
-                        width: "100%",
-                        maxWidth: "64rem",
-                        marginX: "auto",
-                        paddingX: "1.5rem",
-                        paddingY: "0.75rem",
-                        display: "flex",
-                        flexDirection: "row",
-                        justifyContent: "start",
-                        alignItems: "center",
-                        gap: "1rem",
-                    })}
-                >
-                    <Link
-                        to="/"
-                        className={css({
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            flexShrink: "0",
-                        })}
-                    >
-                        <Logo />
-                    </Link>
-                    <Link
-                        to="/"
-                        className={css({
-                            display: "flex",
-                            alignItems: "center",
-                            gap: "0.25rem",
-                            color: "neutral/50",
-                            fontSize: "0.875rem",
-                            _hover: { color: "neutral/75" },
-                        })}
-                    >
-                        <IconArrowLeft size={14} />
-                        Retour
-                    </Link>
-                </div>
-            </div>
+        <>
+            <ActionBar
+                share={{
+                    title: data.fullName,
+                    description: buildPersonShareDescription(data),
+                    hashtags: ["OpenRegistre", "Politique"],
+                }}
+            />
 
             {/* Content */}
             <div
@@ -249,7 +194,9 @@ export function PersonPage() {
                                 })}
                             >
                                 {currentRoles.map((role) => (
-                                    <Chip key={role.id} text={role.label} color="information" />
+                                    <Link key={role.id} to="/bibliotheque/role/$id" params={{ id: role.id }}>
+                                        <Chip text={role.label} color="information" className={{ cursor: "pointer", _hover: { opacity: "0.8" } }} />
+                                    </Link>
                                 ))}
                             </div>
                         )}
@@ -266,7 +213,9 @@ export function PersonPage() {
                                 })}
                             >
                                 {currentParties.map((party) => (
-                                    <Chip key={party.id} text={party.abbreviation || party.name} color="default" />
+                                    <Link key={party.id} to="/bibliotheque/parti/$id" params={{ id: party.id }}>
+                                        <Chip text={party.abbreviation || party.name} color="default" className={{ cursor: "pointer", _hover: { opacity: "0.8" } }} />
+                                    </Link>
                                 ))}
                             </div>
                         )}
@@ -360,9 +309,17 @@ export function PersonPage() {
                                         gap: "0.5rem",
                                     })}
                                 >
-                                    <span className={css({ fontSize: "0.875rem", color: "neutral" })}>
+                                    <Link
+                                        to="/bibliotheque/role/$id"
+                                        params={{ id: role.id }}
+                                        className={css({
+                                            fontSize: "0.875rem",
+                                            color: "neutral",
+                                            _hover: { color: "primary", textDecoration: "underline" },
+                                        })}
+                                    >
                                         {role.label}
-                                    </span>
+                                    </Link>
                                     <span className={css({ fontSize: "0.75rem", color: "neutral/25" })}>
                                         {role.startingAt ?? "?"} — {role.endingAt ?? "en cours"}
                                     </span>
@@ -417,10 +374,18 @@ export function PersonPage() {
                                             style={{ backgroundColor: party.color }}
                                         />
                                     )}
-                                    <span className={css({ fontSize: "0.875rem", color: "neutral" })}>
+                                    <Link
+                                        to="/bibliotheque/parti/$id"
+                                        params={{ id: party.id }}
+                                        className={css({
+                                            fontSize: "0.875rem",
+                                            color: "neutral",
+                                            _hover: { color: "primary", textDecoration: "underline" },
+                                        })}
+                                    >
                                         {party.name}
                                         {party.abbreviation && ` (${party.abbreviation})`}
-                                    </span>
+                                    </Link>
                                     <span className={css({ fontSize: "0.75rem", color: "neutral/25" })}>
                                         {party.startingAt ?? "?"} — {party.endingAt ?? "en cours"}
                                     </span>
@@ -531,8 +496,31 @@ export function PersonPage() {
                     )}
                 </div>
             </div>
-        </div>
+        </>
     )
+}
+
+
+function buildPersonShareDescription(data: PersonOutput): string {
+    const parts: Array<string> = []
+
+    const currentRoles = data.roles.filter((r) => !r.endingAt)
+    if (currentRoles.length > 0) {
+        parts.push(currentRoles.map((r) => r.label).join(", "))
+    }
+
+    const currentParties = data.politicalParties.filter((p) => !p.endingAt)
+    if (currentParties.length > 0) {
+        parts.push(currentParties.map((p) => p.abbreviation || p.name).join(", "))
+    }
+
+    if (data.facts.length > 0) {
+        parts.push(`${data.facts.length} fait${data.facts.length > 1 ? "s" : ""} enregistre${data.facts.length > 1 ? "s" : ""}`)
+    }
+
+    return parts.length > 0
+        ? parts.join(" | ")
+        : "Fiche sur OpenRegistre"
 }
 
 
@@ -678,6 +666,7 @@ function FactCard(props: { fact: PersonOutput["facts"][number] }) {
                                     ? css({
                                         display: "-webkit-box",
                                         WebkitLineClamp: "2",
+                                        // @ts-expect-error WebkitBoxOrient is valid CSS but not in PandaCSS types
                                         WebkitBoxOrient: "vertical",
                                         overflow: "hidden",
                                         textOverflow: "ellipsis",

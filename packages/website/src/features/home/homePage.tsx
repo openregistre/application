@@ -1,5 +1,5 @@
 import { IconSearch } from "@tabler/icons-react"
-import { useNavigate } from "@tanstack/react-router"
+import { Link, useNavigate } from "@tanstack/react-router"
 import { useState } from "react"
 import { css } from "../../../styled-system/css/css"
 import { Button } from "../../components/button/button"
@@ -16,7 +16,7 @@ export function HomePage() {
         if (query.trim() === "") return
 
         navigate({
-            to: "/recherche",
+            to: "/bibliotheque/recherche",
             search: { q: query.trim(), page: 1 },
         })
     }
@@ -144,6 +144,51 @@ export function HomePage() {
                     />
                 </Button>
             </form>
+
+            {/* CGU acceptance + secondary link */}
+            <div
+                className={css({
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    gap: "1rem",
+                })}
+            >
+                <p
+                    className={css({
+                        fontSize: "0.75rem",
+                        color: "neutral/25",
+                        textAlign: "center",
+                        lineHeight: "1.5",
+                    })}
+                >
+                    En effectuant une recherche, vous acceptez les{" "}
+                    <Link
+                        to="/cgu"
+                        className={css({
+                            color: "neutral/40",
+                            textDecoration: "underline",
+                            _hover: { color: "primary" },
+                            transition: "color",
+                            transitionDuration: "150ms",
+                        })}
+                    >
+                        conditions générales d'utilisation
+                    </Link>.
+                </p>
+                <Link
+                    to="/bibliotheque/derniers-ajouts"
+                    className={css({
+                        color: "neutral/40",
+                        fontSize: "0.875rem",
+                        _hover: { color: "primary" },
+                        transition: "color",
+                        transitionDuration: "150ms",
+                    })}
+                >
+                    Voir les derniers ajouts
+                </Link>
+            </div>
         </div>
     )
 }

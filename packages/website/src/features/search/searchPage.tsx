@@ -10,7 +10,6 @@ import { css } from "../../../styled-system/css/css"
 import { cx } from "../../../styled-system/css/cx"
 import { CircularLoader } from "../../components/circularLoader"
 import { Chip } from "../../components/data/chip"
-import { Logo } from "../../components/layouts/logo"
 import { searchRoute } from "../../routes/root/search/searchRoute"
 import { useDataFromAPI } from "../../utilities/useDataFromAPI"
 import { Pagination } from "./pagination"
@@ -55,7 +54,7 @@ export function SearchPage() {
         if (localQuery.trim() === "") return
 
         navigate({
-            to: "/recherche",
+            to: "/bibliotheque/recherche",
             search: { q: localQuery.trim(), page: 1 },
         })
     }
@@ -63,14 +62,14 @@ export function SearchPage() {
     function handleTabChange(tab: SearchTab) {
         setActiveTab(tab)
         navigate({
-            to: "/recherche",
+            to: "/bibliotheque/recherche",
             search: { q, page: 1 },
         })
     }
 
     function handlePageChange(newPage: number) {
         navigate({
-            to: "/recherche",
+            to: "/bibliotheque/recherche",
             search: { q, page: newPage },
         })
     }
@@ -92,18 +91,8 @@ export function SearchPage() {
     }
 
     return (
-        <div
-            className={css({
-                width: "100%",
-                minHeight: "100dvh",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "start",
-                alignItems: "start",
-                backgroundColor: "background",
-            })}
-        >
-            {/* Top bar */}
+        <>
+            {/* Search bar + tabs */}
             <div
                 className={css({
                     width: "100%",
@@ -142,29 +131,6 @@ export function SearchPage() {
                             gap: "0.5rem",
                         })}
                     >
-                        <Link
-                            to="/"
-                            className={css({
-                                display: "flex",
-                                justifyContent: "center",
-                                alignItems: "center",
-                                flexShrink: "0",
-                            })}
-                        >
-                            <Logo />
-                            <h1
-                                className={css({
-                                    color: "primary",
-                                    fontSize: "1rem",
-                                    fontWeight: "400",
-                                    lineHeight: "none",
-                                    letterSpacing: "-0.02em",
-                                })}
-                            >
-                                OpenRegistre
-                            </h1>
-                        </Link>
-
                         <div
                             className={css({
                                 flex: "1",
@@ -333,7 +299,7 @@ export function SearchPage() {
                     />
                 )}
             </div>
-        </div>
+        </>
     )
 }
 
@@ -365,7 +331,7 @@ function PersonsResults(props: {
             {props.data.results.map((person) => (
                 <Link
                     key={person.id}
-                    to="/personne/$id"
+                    to="/bibliotheque/personne/$id"
                     params={{ id: person.id }}
                     className={css({
                         width: "100%",
@@ -513,7 +479,7 @@ function FactsResults(props: {
 
                     <div className={css({ display: "flex", flexDirection: "row", alignItems: "center", gap: "0.5rem" })}>
                         <Link
-                            to="/personne/$id"
+                            to="/bibliotheque/personne/$id"
                             params={{ id: fact.person.id }}
                             className={css({
                                 fontSize: "0.8125rem",

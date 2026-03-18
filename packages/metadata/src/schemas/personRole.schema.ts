@@ -1,8 +1,8 @@
 import * as v from 'valibot'
-import { idSchema } from '../components/schemas/idSchema'
-import { stringSchema } from '../components/schemas/stringSchema'
-import { timestampSchema } from '../components/schemas/timestampSchema'
-import type { personRoleModel } from '../orm/models/personRole.model'
+import { idSchema } from '../components/schemas/idSchema.js'
+import { stringSchema } from '../components/schemas/stringSchema.js'
+import { timestampSchema } from '../components/schemas/timestampSchema.js'
+import type { personRoleModel } from '../orm/models/personRole.model.js'
 
 
 export const personRoleSchema = v.object({

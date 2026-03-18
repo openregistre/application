@@ -1,8 +1,8 @@
 import * as v from "valibot"
-import { idSchema } from "../../../components/schemas/idSchema"
-import { integerSchema } from "../../../components/schemas/integerSchema"
-import { stringSchema } from "../../../components/schemas/stringSchema"
-import { routeDefinition } from "../../../utilities/index"
+import { idSchema } from "../../../components/schemas/idSchema.js"
+import { integerSchema } from "../../../components/schemas/integerSchema.js"
+import { stringSchema } from "../../../components/schemas/stringSchema.js"
+import { routeDefinition } from "../../../utilities/index.js"
 
 
 export const searchPersonsRouteDefinition = routeDefinition({

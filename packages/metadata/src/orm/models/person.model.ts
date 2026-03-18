@@ -1,7 +1,7 @@
 import { boolean, index, pgTable, text } from "drizzle-orm/pg-core"
-import { idColumn } from "../../components/models/idColumn"
-import { stringArrayColumn } from "../../components/models/stringArrayColumn"
-import { timestampColumn } from "../../components/models/timestampColumn"
+import { idColumn } from "../../components/models/idColumn.js"
+import { stringArrayColumn } from "../../components/models/stringArrayColumn.js"
+import { timestampColumn } from "../../components/models/timestampColumn.js"
 
 
 export const personModel = pgTable(

@@ -1,10 +1,10 @@
 import * as v from 'valibot'
-import { booleanSchema } from '../components/schemas/booleanSchema'
-import { idSchema } from '../components/schemas/idSchema'
-import { stringArraySchema } from '../components/schemas/stringArraySchema'
-import { stringSchema } from '../components/schemas/stringSchema'
-import { timestampSchema } from '../components/schemas/timestampSchema'
-import type { personModel } from '../orm/models/person.model'
+import { booleanSchema } from '../components/schemas/booleanSchema.js'
+import { idSchema } from '../components/schemas/idSchema.js'
+import { stringArraySchema } from '../components/schemas/stringArraySchema.js'
+import { stringSchema } from '../components/schemas/stringSchema.js'
+import { timestampSchema } from '../components/schemas/timestampSchema.js'
+import type { personModel } from '../orm/models/person.model.js'
 
 
 export const personSchema = v.object({

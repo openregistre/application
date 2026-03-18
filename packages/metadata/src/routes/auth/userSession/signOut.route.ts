@@ -1,5 +1,5 @@
 import * as v from "valibot"
-import { routeDefinition } from "../../../utilities/index"
+import { routeDefinition } from "../../../utilities/index.js"
 
 
 export const signOutRouteDefinition = routeDefinition({

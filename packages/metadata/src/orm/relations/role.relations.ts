@@ -1,6 +1,6 @@
 import { relations } from "drizzle-orm"
-import { personRoleModel } from "../models/personRole.model"
-import { roleModel } from "../models/role.model"
+import { personRoleModel } from "../models/personRole.model.js"
+import { roleModel } from "../models/role.model.js"
 
 
 export const roleRelations = relations(roleModel, ({ one, many }) => ({

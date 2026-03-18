@@ -1,10 +1,10 @@
 import { createRoute } from "@tanstack/react-router"
 import { SearchPage } from "../../../features/search/searchPage"
-import { rootLayoutRoute } from "../../rootLayoutRoute"
+import { bibliothequeLayoutRoute } from "../bibliotheque/bibliothequeLayoutRoute"
 
 
 export const searchRoute = createRoute({
-    getParentRoute: () => rootLayoutRoute,
+    getParentRoute: () => bibliothequeLayoutRoute,
     path: "/recherche",
     validateSearch: (search: Record<string, unknown>) => ({
         q: (search.q as string) || "",
