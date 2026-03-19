@@ -535,308 +535,308 @@ async function seed() {
                 id: generateId(), idPerson: macron.id,
                 title: "Réforme des retraites 2023",
                 description: "Emmanuel Macron promulgue la réforme des retraites repoussant l'âge légal de départ de 62 à 64 ans, malgré une forte contestation sociale et l'utilisation de l'article 49.3 par le gouvernement.",
-                occurredAt: "2023-04-15", category: "Législation",
+                occurredAt: "2023-04-15",
                 isFlagged: false, createdAt: now,
             }
             const factMacronDissolution = {
                 id: generateId(), idPerson: macron.id,
                 title: "Dissolution de l'Assemblée nationale",
                 description: "Après la victoire du Rassemblement National aux élections européennes, Emmanuel Macron annonce la dissolution de l'Assemblée nationale, provoquant des élections législatives anticipées.",
-                occurredAt: "2024-06-09", category: "Politique",
+                occurredAt: "2024-06-09",
                 isFlagged: false, createdAt: now,
             }
             const factMacronElection2017 = {
                 id: generateId(), idPerson: macron.id,
                 title: "Élection présidentielle de 2017",
                 description: "Emmanuel Macron est élu président de la République française avec 66,1% des voix au second tour face à Marine Le Pen, devenant le plus jeune président de la Ve République.",
-                occurredAt: "2017-05-07", category: "Élection",
+                occurredAt: "2017-05-07",
                 isFlagged: false, createdAt: now,
             }
             const factMacronReelection2022 = {
                 id: generateId(), idPerson: macron.id,
                 title: "Réélection présidentielle de 2022",
                 description: "Emmanuel Macron est réélu président de la République avec 58,55% des voix au second tour, de nouveau face à Marine Le Pen, dans un contexte de forte abstention.",
-                occurredAt: "2022-04-24", category: "Élection",
+                occurredAt: "2022-04-24",
                 isFlagged: false, createdAt: now,
             }
             const factMacronBayrou = {
                 id: generateId(), idPerson: macron.id,
                 title: "Nomination de François Bayrou à Matignon",
                 description: "Après la chute du gouvernement Barnier par une motion de censure, Emmanuel Macron nomme François Bayrou Premier ministre, le quatrième de son second quinquennat.",
-                occurredAt: "2024-12-13", category: "Politique",
+                occurredAt: "2024-12-13",
                 isFlagged: false, createdAt: now,
             }
             const factLePenProces = {
                 id: generateId(), idPerson: lePen.id,
                 title: "Procès des assistants parlementaires européens",
                 description: "Marine Le Pen est jugée dans l'affaire des emplois présumés fictifs d'assistants parlementaires du FN au Parlement européen. Le parquet requiert une peine de cinq ans d'inéligibilité.",
-                occurredAt: "2024-11-13", category: "Justice",
+                occurredAt: "2024-11-13",
                 isFlagged: false, createdAt: now,
             }
             const factLePenPresidentielle2022 = {
                 id: generateId(), idPerson: lePen.id,
                 title: "Second tour présidentielle 2022",
                 description: "Marine Le Pen accède pour la deuxième fois au second tour de l'élection présidentielle, recueillant 41,45% des voix face à Emmanuel Macron, améliorant significativement son score de 2017.",
-                occurredAt: "2022-04-24", category: "Élection",
+                occurredAt: "2022-04-24",
                 isFlagged: false, createdAt: now,
             }
             const factMelenchonNUPES = {
                 id: generateId(), idPerson: melenchon.id,
                 title: "Création de la NUPES",
                 description: "Jean-Luc Mélenchon initie la création de la Nouvelle Union Populaire Écologique et Sociale (NUPES), alliance de gauche réunissant LFI, le PS, EELV et le PCF pour les législatives de 2022.",
-                occurredAt: "2022-05-01", category: "Politique",
+                occurredAt: "2022-05-01",
                 isFlagged: false, createdAt: now,
             }
             const factMelenchonPresidentielle = {
                 id: generateId(), idPerson: melenchon.id,
                 title: "Troisième candidature présidentielle",
                 description: "Jean-Luc Mélenchon obtient 21,95% des voix au premier tour de l'élection présidentielle 2022, échouant de peu à se qualifier pour le second tour, terminant troisième derrière Le Pen.",
-                occurredAt: "2022-04-10", category: "Élection",
+                occurredAt: "2022-04-10",
                 isFlagged: false, createdAt: now,
             }
             const factDarmaninLoiImmigration = {
                 id: generateId(), idPerson: darmanin.id,
                 title: "Loi immigration",
                 description: "Gérald Darmanin porte le projet de loi pour contrôler l'immigration et améliorer l'intégration, texte controversé adopté après de vifs débats parlementaires et des concessions à la droite.",
-                occurredAt: "2023-12-19", category: "Législation",
+                occurredAt: "2023-12-19",
                 isFlagged: false, createdAt: now,
             }
             const factDarmaninJO = {
                 id: generateId(), idPerson: darmanin.id,
                 title: "Sécurité des JO 2024",
                 description: "En tant que ministre de l'Intérieur, Gérald Darmanin supervise le dispositif de sécurité exceptionnel déployé pour les Jeux olympiques de Paris 2024, mobilisant 45 000 policiers et gendarmes.",
-                occurredAt: "2024-07-26", category: "Événement",
+                occurredAt: "2024-07-26",
                 isFlagged: false, createdAt: now,
             }
             const factHidalgoJO2024 = {
                 id: generateId(), idPerson: hidalgo.id,
                 title: "Jeux olympiques de Paris 2024",
                 description: "En tant que maire de Paris, Anne Hidalgo supervise l'organisation des Jeux olympiques et paralympiques de Paris 2024, incluant la cérémonie d'ouverture sur la Seine.",
-                occurredAt: "2024-07-26", category: "Événement",
+                occurredAt: "2024-07-26",
                 isFlagged: false, createdAt: now,
             }
             const factHidalgoCandidature = {
                 id: generateId(), idPerson: hidalgo.id,
                 title: "Candidature présidentielle 2022",
                 description: "Anne Hidalgo se présente à l'élection présidentielle de 2022 sous les couleurs du Parti Socialiste, obtenant 1,75% des voix au premier tour, le plus bas score historique du PS.",
-                occurredAt: "2022-04-10", category: "Élection",
+                occurredAt: "2022-04-10",
                 isFlagged: false, createdAt: now,
             }
             const factBorneNominationPM = {
                 id: generateId(), idPerson: borne.id,
                 title: "Nomination comme Première ministre",
                 description: "Élisabeth Borne est nommée Première ministre par Emmanuel Macron, devenant la deuxième femme à occuper ce poste dans l'histoire de la Ve République, après Édith Cresson.",
-                occurredAt: "2022-05-16", category: "Politique",
+                occurredAt: "2022-05-16",
                 isFlagged: false, createdAt: now,
             }
             const factBorne49_3 = {
                 id: generateId(), idPerson: borne.id,
                 title: "Recours au 49.3 pour les retraites",
                 description: "La Première ministre Élisabeth Borne engage la responsabilité du gouvernement sur la réforme des retraites via l'article 49.3, évitant un vote à l'Assemblée nationale jugé incertain.",
-                occurredAt: "2023-03-16", category: "Législation",
+                occurredAt: "2023-03-16",
                 isFlagged: false, createdAt: now,
             }
             const factLeMaireDette = {
                 id: generateId(), idPerson: leMaire.id,
                 title: "Alerte sur la dette publique",
                 description: "Bruno Le Maire tire la sonnette d'alarme sur l'état des finances publiques françaises, avec une dette publique dépassant les 3 000 milliards d'euros et un déficit supérieur aux prévisions.",
-                occurredAt: "2024-03-20", category: "Économie",
+                occurredAt: "2024-03-20",
                 isFlagged: false, createdAt: now,
             }
             const factLeMairePlanRelance = {
                 id: generateId(), idPerson: leMaire.id,
                 title: "Plan de relance France 2030",
                 description: "Bruno Le Maire présente le plan d'investissement France 2030 doté de 54 milliards d'euros, visant à réindustrialiser la France et investir dans les technologies d'avenir.",
-                occurredAt: "2021-10-12", category: "Économie",
+                occurredAt: "2021-10-12",
                 isFlagged: false, createdAt: now,
             }
             const factZemmourCondamnation = {
                 id: generateId(), idPerson: zemmour.id,
                 title: "Condamnation pour provocation à la haine raciale",
                 description: "Éric Zemmour est condamné pour provocation à la haine raciale après ses propos sur les mineurs isolés étrangers tenus sur CNews, une condamnation confirmée en appel.",
-                occurredAt: "2022-01-17", category: "Justice",
+                occurredAt: "2022-01-17",
                 isFlagged: false, createdAt: now,
             }
             const factZemmourCandidature = {
                 id: generateId(), idPerson: zemmour.id,
                 title: "Candidature présidentielle 2022",
                 description: "Éric Zemmour se présente à l'élection présidentielle sous l'étiquette Reconquête, obtenant 7,07% des voix au premier tour après une campagne centrée sur l'immigration et l'identité.",
-                occurredAt: "2022-04-10", category: "Élection",
+                occurredAt: "2022-04-10",
                 isFlagged: false, createdAt: now,
             }
             const factRousseau49_3 = {
                 id: generateId(), idPerson: rousseau.id,
                 title: "Opposition au 49.3 sur les retraites",
                 description: "Sandrine Rousseau participe activement à l'opposition parlementaire contre l'utilisation du 49.3 par le gouvernement pour faire adopter la réforme des retraites sans vote.",
-                occurredAt: "2023-03-16", category: "Législation",
+                occurredAt: "2023-03-16",
                 isFlagged: false, createdAt: now,
             }
             const factBardellaEuropeennes = {
                 id: generateId(), idPerson: bardella.id,
                 title: "Victoire aux élections européennes 2024",
                 description: "Jordan Bardella mène la liste du Rassemblement National aux élections européennes de 2024, obtenant plus de 31% des voix, un score historique qui déclenche la dissolution de l'Assemblée nationale.",
-                occurredAt: "2024-06-09", category: "Élection",
+                occurredAt: "2024-06-09",
                 isFlagged: false, createdAt: now,
             }
             const factBardellaPM = {
                 id: generateId(), idPerson: bardella.id,
                 title: "Candidature au poste de Premier ministre",
                 description: "Jordan Bardella est désigné comme candidat du RN au poste de Premier ministre pour les élections législatives anticipées de 2024, une première pour un président du RN.",
-                occurredAt: "2024-06-12", category: "Politique",
+                occurredAt: "2024-06-12",
                 isFlagged: false, createdAt: now,
             }
             const factAttalPM = {
                 id: generateId(), idPerson: attal.id,
                 title: "Plus jeune Premier ministre de la Ve République",
                 description: "Gabriel Attal est nommé Premier ministre à 34 ans, devenant le plus jeune chef de gouvernement de l'histoire de la Ve République française.",
-                occurredAt: "2024-01-09", category: "Politique",
+                occurredAt: "2024-01-09",
                 isFlagged: false, createdAt: now,
             }
             const factAttalLegislatives = {
                 id: generateId(), idPerson: attal.id,
                 title: "Campagne législatives anticipées 2024",
                 description: "Gabriel Attal mène la campagne du camp présidentiel aux élections législatives anticipées, défendant le bilan du gouvernement face à la montée du RN et du Nouveau Front Populaire.",
-                occurredAt: "2024-06-20", category: "Élection",
+                occurredAt: "2024-06-20",
                 isFlagged: false, createdAt: now,
             }
             const factHollandeDepute = {
                 id: generateId(), idPerson: hollande.id,
                 title: "Retour à l'Assemblée nationale",
                 description: "François Hollande, ancien président de la République, est élu député de Corrèze lors des élections législatives anticipées de 2024, un retour inédit pour un ex-chef de l'État.",
-                occurredAt: "2024-07-07", category: "Élection",
+                occurredAt: "2024-07-07",
                 isFlagged: false, createdAt: now,
             }
             const factHollandePresidentielle2012 = {
                 id: generateId(), idPerson: hollande.id,
                 title: "Élection présidentielle 2012",
                 description: "François Hollande est élu président de la République française avec 51,64% des voix au second tour face à Nicolas Sarkozy, devenant le premier président socialiste depuis 1995.",
-                occurredAt: "2012-05-06", category: "Élection",
+                occurredAt: "2012-05-06",
                 isFlagged: false, createdAt: now,
             }
             const factBraunPivetAN = {
                 id: generateId(), idPerson: braunPivet.id,
                 title: "Première femme présidente de l'Assemblée nationale",
                 description: "Yaël Braun-Pivet est élue présidente de l'Assemblée nationale, devenant la première femme à occuper ce poste, quatrième personnage de l'État.",
-                occurredAt: "2022-06-28", category: "Politique",
+                occurredAt: "2022-06-28",
                 isFlagged: false, createdAt: now,
             }
             const factBraunPivetReelection = {
                 id: generateId(), idPerson: braunPivet.id,
                 title: "Réélection controversée au perchoir",
                 description: "Yaël Braun-Pivet est réélue présidente de l'Assemblée nationale en juillet 2024 malgré les revendications du Nouveau Front Populaire qui avait obtenu le plus de sièges aux législatives.",
-                occurredAt: "2024-07-18", category: "Politique",
+                occurredAt: "2024-07-18",
                 isFlagged: false, createdAt: now,
             }
             const factPanotMotionCensure = {
                 id: generateId(), idPerson: panot.id,
                 title: "Dépôt d'une motion de censure contre le gouvernement Barnier",
                 description: "Mathilde Panot, présidente du groupe LFI, dépose une motion de censure contre le gouvernement de Michel Barnier, adoptée avec les voix du RN provoquant la chute du gouvernement.",
-                occurredAt: "2024-12-04", category: "Politique",
+                occurredAt: "2024-12-04",
                 isFlagged: false, createdAt: now,
             }
             const factPanotPresidenteGroupe = {
                 id: generateId(), idPerson: panot.id,
                 title: "Élue présidente du groupe LFI",
                 description: "Mathilde Panot, à 32 ans, est élue présidente du groupe La France Insoumise à l'Assemblée nationale, succédant à Jean-Luc Mélenchon qui n'avait pas été candidat à sa réélection.",
-                occurredAt: "2022-06-22", category: "Politique",
+                occurredAt: "2022-06-22",
                 isFlagged: false, createdAt: now,
             }
             const factWauquiezGroupe = {
                 id: generateId(), idPerson: wauquiez.id,
                 title: "Retour à l'Assemblée et présidence du groupe DR",
                 description: "Laurent Wauquiez est élu député et prend la présidence du groupe Droite Républicaine à l'Assemblée nationale, s'imposant comme une figure centrale de la droite parlementaire.",
-                occurredAt: "2024-07-08", category: "Politique",
+                occurredAt: "2024-07-08",
                 isFlagged: false, createdAt: now,
             }
             const factCiottiRN = {
                 id: generateId(), idPerson: ciotti.id,
                 title: "Alliance avec le Rassemblement National",
                 description: "Éric Ciotti, président des Républicains, annonce une alliance avec le RN pour les législatives anticipées, provoquant une crise majeure au sein de LR et son exclusion du parti.",
-                occurredAt: "2024-06-11", category: "Politique",
+                occurredAt: "2024-06-11",
                 isFlagged: false, createdAt: now,
             }
             const factVallaudNFP = {
                 id: generateId(), idPerson: vallaud.id,
                 title: "Négociateur du Nouveau Front Populaire",
                 description: "Boris Vallaud joue un rôle clé dans les négociations du Nouveau Front Populaire, l'alliance de gauche formée en réponse à la dissolution, unifiant PS, LFI, EELV et PCF.",
-                occurredAt: "2024-06-14", category: "Politique",
+                occurredAt: "2024-06-14",
                 isFlagged: false, createdAt: now,
             }
             const factBayrouPM = {
                 id: generateId(), idPerson: bayrou.id,
                 title: "Nomination au poste de Premier ministre",
                 description: "François Bayrou est nommé Premier ministre par Emmanuel Macron après la censure du gouvernement Barnier, devenant le premier leader centriste à Matignon sous la Ve République.",
-                occurredAt: "2024-12-13", category: "Politique",
+                occurredAt: "2024-12-13",
                 isFlagged: false, createdAt: now,
             }
             const factBayrouCensure = {
                 id: generateId(), idPerson: bayrou.id,
                 title: "Menace de motion de censure",
                 description: "François Bayrou fait face à une menace de motion de censure de la gauche dès sa prise de fonction, illustrant l'instabilité parlementaire de la XVIIe législature.",
-                occurredAt: "2025-01-15", category: "Politique",
+                occurredAt: "2025-01-15",
                 isFlagged: false, createdAt: now,
             }
             const factPhilippeCandidature = {
                 id: generateId(), idPerson: philippeE.id,
                 title: "Déclaration de candidature présidentielle 2027",
                 description: "Édouard Philippe annonce officiellement sa candidature à l'élection présidentielle de 2027, se positionnant comme candidat du centre-droit avec son parti Horizons.",
-                occurredAt: "2025-02-01", category: "Politique",
+                occurredAt: "2025-02-01",
                 isFlagged: false, createdAt: now,
             }
             const factRetailleauInterieur = {
                 id: generateId(), idPerson: retailleau.id,
                 title: "Nomination au ministère de l'Intérieur",
                 description: "Bruno Retailleau est nommé ministre de l'Intérieur dans le gouvernement Barnier, marquant un virage sécuritaire avec ses positions fermes sur l'immigration et l'ordre public.",
-                occurredAt: "2024-09-21", category: "Politique",
+                occurredAt: "2024-09-21",
                 isFlagged: false, createdAt: now,
             }
             const factRuffinRupture = {
                 id: generateId(), idPerson: ruffin.id,
                 title: "Rupture avec La France Insoumise",
                 description: "François Ruffin consomme sa rupture avec LFI et Jean-Luc Mélenchon, critiquant la stratégie du mouvement et se positionnant comme candidat indépendant à gauche.",
-                occurredAt: "2024-06-15", category: "Politique",
+                occurredAt: "2024-06-15",
                 isFlagged: false, createdAt: now,
             }
             const factCoquerelFinances = {
                 id: generateId(), idPerson: coquerel.id,
                 title: "Présidence de la commission des finances",
                 description: "Éric Coquerel est élu président de la commission des finances de l'Assemblée nationale, une position stratégique pour le groupe LFI dans le contrôle budgétaire.",
-                occurredAt: "2022-06-30", category: "Politique",
+                occurredAt: "2022-06-30",
                 isFlagged: false, createdAt: now,
             }
             const factBoyardHanouna = {
                 id: generateId(), idPerson: boyard.id,
                 title: "Altercation sur le plateau de TPMP",
                 description: "Louis Boyard, plus jeune député de l'Assemblée, est au cœur d'une violente altercation verbale avec Cyril Hanouna sur le plateau de Touche Pas à Mon Poste, provoquant un tollé médiatique.",
-                occurredAt: "2022-11-10", category: "Médias",
+                occurredAt: "2022-11-10",
                 isFlagged: false, createdAt: now,
             }
             const factCastaner = {
                 id: generateId(), idPerson: castaner.id,
                 title: "Ancien ministre de l'Intérieur",
                 description: "Christophe Castaner, ancien ministre de l'Intérieur pendant la crise des gilets jaunes, est réélu député et continue son engagement au sein de la majorité présidentielle.",
-                occurredAt: "2024-07-07", category: "Politique",
+                occurredAt: "2024-07-07",
                 isFlagged: false, createdAt: now,
             }
             const factChassaigneDoyen = {
                 id: generateId(), idPerson: music.id,
                 title: "Doyen de l'Assemblée nationale",
                 description: "André Chassaigne, député communiste du Puy-de-Dôme depuis 2002, devient le doyen d'âge de l'Assemblée nationale, présidant la séance inaugurale de la XVIIe législature.",
-                occurredAt: "2024-07-08", category: "Politique",
+                occurredAt: "2024-07-08",
                 isFlagged: false, createdAt: now,
             }
             const factRousselPresidentielle = {
                 id: generateId(), idPerson: music5.id,
                 title: "Candidature présidentielle PCF",
                 description: "Fabien Roussel se présente à l'élection présidentielle de 2022 sous l'étiquette du PCF, obtenant 2,28% des voix avec une campagne axée sur le pouvoir d'achat et la laïcité.",
-                occurredAt: "2022-04-10", category: "Élection",
+                occurredAt: "2022-04-10",
                 isFlagged: false, createdAt: now,
             }
             const factFesneauAgriculture = {
                 id: generateId(), idPerson: fesneau.id,
                 title: "Crise agricole et négociations",
                 description: "Marc Fesneau, ministre de l'Agriculture, gère la crise agricole de 2024 avec les manifestations d'agriculteurs bloquant les autoroutes, négociant des mesures de soutien au secteur.",
-                occurredAt: "2024-01-25", category: "Politique",
+                occurredAt: "2024-01-25",
                 isFlagged: false, createdAt: now,
             }
 
@@ -872,6 +872,271 @@ async function seed() {
 
             await tx.insert(models.fact).values(allFacts)
             console.log(`  → ${allFacts.length} facts seeded.`)
+
+
+            // ================================================================
+            // Tags
+            // ================================================================
+            console.log("Seeding tags...")
+            const tagLegislation = { id: generateId(), label: "Législation", createdAt: now }
+            const tagPolitique = { id: generateId(), label: "Politique", createdAt: now }
+            const tagElection = { id: generateId(), label: "Élection", createdAt: now }
+            const tagJustice = { id: generateId(), label: "Justice", createdAt: now }
+            const tagEvenement = { id: generateId(), label: "Événement", createdAt: now }
+            const tagEconomie = { id: generateId(), label: "Économie", createdAt: now }
+            const tagMedias = { id: generateId(), label: "Médias", createdAt: now }
+            const tagSocial = { id: generateId(), label: "Social", createdAt: now }
+            const tagSecurite = { id: generateId(), label: "Sécurité", createdAt: now }
+            const tagImmigration = { id: generateId(), label: "Immigration", createdAt: now }
+            const tagInstitutionnel = { id: generateId(), label: "Institutionnel", createdAt: now }
+            const tagEnvironnement = { id: generateId(), label: "Environnement", createdAt: now }
+            const tagInternational = { id: generateId(), label: "International", createdAt: now }
+            const tagControverse = { id: generateId(), label: "Controverse", createdAt: now }
+            const tagPresidentielle = { id: generateId(), label: "Présidentielle", createdAt: now }
+            const tagAssembleeNationale = { id: generateId(), label: "Assemblée nationale", createdAt: now }
+            const tagSport = { id: generateId(), label: "Sport", createdAt: now }
+            const tagAgriculture = { id: generateId(), label: "Agriculture", createdAt: now }
+            const tagBudget = { id: generateId(), label: "Budget", createdAt: now }
+            const tagPartis = { id: generateId(), label: "Partis politiques", createdAt: now }
+
+            const allTags = [
+                tagLegislation, tagPolitique, tagElection, tagJustice,
+                tagEvenement, tagEconomie, tagMedias, tagSocial,
+                tagSecurite, tagImmigration, tagInstitutionnel, tagEnvironnement,
+                tagInternational, tagControverse, tagPresidentielle, tagAssembleeNationale,
+                tagSport, tagAgriculture, tagBudget, tagPartis,
+            ]
+
+            await tx.insert(models.tag).values(allTags)
+            console.log(`  → ${allTags.length} tags seeded.`)
+
+
+            // ================================================================
+            // Fact-Tag assignments (multiple tags per fact)
+            // ================================================================
+            console.log("Seeding fact-tag assignments...")
+
+            const ft = (fact: typeof factMacronRetraites, tag: typeof tagLegislation) => ({
+                id: generateId(), idFact: fact.id, idTag: tag.id, createdAt: now,
+            })
+
+            const allFactTags = [
+                // Macron — Réforme des retraites 2023
+                ft(factMacronRetraites, tagLegislation),
+                ft(factMacronRetraites, tagSocial),
+                ft(factMacronRetraites, tagPolitique),
+                ft(factMacronRetraites, tagControverse),
+                ft(factMacronRetraites, tagInstitutionnel),
+                ft(factMacronRetraites, tagEconomie),
+                // Macron — Dissolution
+                ft(factMacronDissolution, tagPolitique),
+                ft(factMacronDissolution, tagInstitutionnel),
+                ft(factMacronDissolution, tagAssembleeNationale),
+                ft(factMacronDissolution, tagElection),
+                ft(factMacronDissolution, tagControverse),
+                // Macron — Élection 2017
+                ft(factMacronElection2017, tagElection),
+                ft(factMacronElection2017, tagPresidentielle),
+                ft(factMacronElection2017, tagPolitique),
+                // Macron — Réélection 2022
+                ft(factMacronReelection2022, tagElection),
+                ft(factMacronReelection2022, tagPresidentielle),
+                ft(factMacronReelection2022, tagPolitique),
+                // Macron — Nomination Bayrou
+                ft(factMacronBayrou, tagPolitique),
+                ft(factMacronBayrou, tagInstitutionnel),
+                ft(factMacronBayrou, tagPartis),
+                // Le Pen — Procès assistants
+                ft(factLePenProces, tagJustice),
+                ft(factLePenProces, tagControverse),
+                ft(factLePenProces, tagInternational),
+                ft(factLePenProces, tagPartis),
+                // Le Pen — Présidentielle 2022
+                ft(factLePenPresidentielle2022, tagElection),
+                ft(factLePenPresidentielle2022, tagPresidentielle),
+                ft(factLePenPresidentielle2022, tagPolitique),
+                // Mélenchon — NUPES
+                ft(factMelenchonNUPES, tagPolitique),
+                ft(factMelenchonNUPES, tagPartis),
+                ft(factMelenchonNUPES, tagElection),
+                ft(factMelenchonNUPES, tagAssembleeNationale),
+                // Mélenchon — Présidentielle
+                ft(factMelenchonPresidentielle, tagElection),
+                ft(factMelenchonPresidentielle, tagPresidentielle),
+                ft(factMelenchonPresidentielle, tagPolitique),
+                // Darmanin — Loi immigration
+                ft(factDarmaninLoiImmigration, tagLegislation),
+                ft(factDarmaninLoiImmigration, tagImmigration),
+                ft(factDarmaninLoiImmigration, tagControverse),
+                ft(factDarmaninLoiImmigration, tagSecurite),
+                ft(factDarmaninLoiImmigration, tagPolitique),
+                ft(factDarmaninLoiImmigration, tagSocial),
+                // Darmanin — JO 2024
+                ft(factDarmaninJO, tagEvenement),
+                ft(factDarmaninJO, tagSecurite),
+                ft(factDarmaninJO, tagSport),
+                ft(factDarmaninJO, tagInternational),
+                // Hidalgo — JO 2024
+                ft(factHidalgoJO2024, tagEvenement),
+                ft(factHidalgoJO2024, tagSport),
+                ft(factHidalgoJO2024, tagInternational),
+                ft(factHidalgoJO2024, tagPolitique),
+                // Hidalgo — Candidature 2022
+                ft(factHidalgoCandidature, tagElection),
+                ft(factHidalgoCandidature, tagPresidentielle),
+                ft(factHidalgoCandidature, tagPartis),
+                // Borne — Nomination PM
+                ft(factBorneNominationPM, tagPolitique),
+                ft(factBorneNominationPM, tagInstitutionnel),
+                // Borne — 49.3 retraites
+                ft(factBorne49_3, tagLegislation),
+                ft(factBorne49_3, tagInstitutionnel),
+                ft(factBorne49_3, tagControverse),
+                ft(factBorne49_3, tagSocial),
+                ft(factBorne49_3, tagAssembleeNationale),
+                ft(factBorne49_3, tagPolitique),
+                // Le Maire — Dette publique
+                ft(factLeMaireDette, tagEconomie),
+                ft(factLeMaireDette, tagBudget),
+                ft(factLeMaireDette, tagPolitique),
+                // Le Maire — Plan de relance
+                ft(factLeMairePlanRelance, tagEconomie),
+                ft(factLeMairePlanRelance, tagBudget),
+                ft(factLeMairePlanRelance, tagEnvironnement),
+                ft(factLeMairePlanRelance, tagInternational),
+                // Zemmour — Condamnation
+                ft(factZemmourCondamnation, tagJustice),
+                ft(factZemmourCondamnation, tagControverse),
+                ft(factZemmourCondamnation, tagMedias),
+                ft(factZemmourCondamnation, tagImmigration),
+                // Zemmour — Candidature 2022
+                ft(factZemmourCandidature, tagElection),
+                ft(factZemmourCandidature, tagPresidentielle),
+                ft(factZemmourCandidature, tagControverse),
+                ft(factZemmourCandidature, tagImmigration),
+                // Rousseau — Opposition 49.3
+                ft(factRousseau49_3, tagLegislation),
+                ft(factRousseau49_3, tagSocial),
+                ft(factRousseau49_3, tagAssembleeNationale),
+                ft(factRousseau49_3, tagControverse),
+                // Bardella — Européennes 2024
+                ft(factBardellaEuropeennes, tagElection),
+                ft(factBardellaEuropeennes, tagInternational),
+                ft(factBardellaEuropeennes, tagPolitique),
+                ft(factBardellaEuropeennes, tagPartis),
+                // Bardella — Candidature PM
+                ft(factBardellaPM, tagPolitique),
+                ft(factBardellaPM, tagElection),
+                ft(factBardellaPM, tagPartis),
+                ft(factBardellaPM, tagInstitutionnel),
+                // Attal — Plus jeune PM
+                ft(factAttalPM, tagPolitique),
+                ft(factAttalPM, tagInstitutionnel),
+                // Attal — Législatives 2024
+                ft(factAttalLegislatives, tagElection),
+                ft(factAttalLegislatives, tagAssembleeNationale),
+                ft(factAttalLegislatives, tagPolitique),
+                ft(factAttalLegislatives, tagPartis),
+                // Hollande — Retour député
+                ft(factHollandeDepute, tagElection),
+                ft(factHollandeDepute, tagAssembleeNationale),
+                ft(factHollandeDepute, tagPolitique),
+                ft(factHollandeDepute, tagInstitutionnel),
+                // Hollande — Présidentielle 2012
+                ft(factHollandePresidentielle2012, tagElection),
+                ft(factHollandePresidentielle2012, tagPresidentielle),
+                ft(factHollandePresidentielle2012, tagPolitique),
+                // Braun-Pivet — Présidente AN
+                ft(factBraunPivetAN, tagPolitique),
+                ft(factBraunPivetAN, tagInstitutionnel),
+                ft(factBraunPivetAN, tagAssembleeNationale),
+                // Braun-Pivet — Réélection
+                ft(factBraunPivetReelection, tagPolitique),
+                ft(factBraunPivetReelection, tagInstitutionnel),
+                ft(factBraunPivetReelection, tagAssembleeNationale),
+                ft(factBraunPivetReelection, tagControverse),
+                // Panot — Motion de censure
+                ft(factPanotMotionCensure, tagPolitique),
+                ft(factPanotMotionCensure, tagInstitutionnel),
+                ft(factPanotMotionCensure, tagAssembleeNationale),
+                ft(factPanotMotionCensure, tagControverse),
+                ft(factPanotMotionCensure, tagPartis),
+                // Panot — Présidente groupe LFI
+                ft(factPanotPresidenteGroupe, tagPolitique),
+                ft(factPanotPresidenteGroupe, tagAssembleeNationale),
+                ft(factPanotPresidenteGroupe, tagPartis),
+                // Wauquiez — Retour et présidence groupe DR
+                ft(factWauquiezGroupe, tagPolitique),
+                ft(factWauquiezGroupe, tagAssembleeNationale),
+                ft(factWauquiezGroupe, tagElection),
+                ft(factWauquiezGroupe, tagPartis),
+                // Ciotti — Alliance RN
+                ft(factCiottiRN, tagPolitique),
+                ft(factCiottiRN, tagPartis),
+                ft(factCiottiRN, tagControverse),
+                ft(factCiottiRN, tagElection),
+                ft(factCiottiRN, tagAssembleeNationale),
+                // Vallaud — NFP
+                ft(factVallaudNFP, tagPolitique),
+                ft(factVallaudNFP, tagPartis),
+                ft(factVallaudNFP, tagElection),
+                ft(factVallaudNFP, tagAssembleeNationale),
+                // Bayrou — PM
+                ft(factBayrouPM, tagPolitique),
+                ft(factBayrouPM, tagInstitutionnel),
+                ft(factBayrouPM, tagPartis),
+                // Bayrou — Menace censure
+                ft(factBayrouCensure, tagPolitique),
+                ft(factBayrouCensure, tagInstitutionnel),
+                ft(factBayrouCensure, tagAssembleeNationale),
+                ft(factBayrouCensure, tagControverse),
+                // Philippe — Candidature 2027
+                ft(factPhilippeCandidature, tagPolitique),
+                ft(factPhilippeCandidature, tagPresidentielle),
+                ft(factPhilippeCandidature, tagElection),
+                ft(factPhilippeCandidature, tagPartis),
+                // Retailleau — Ministère Intérieur
+                ft(factRetailleauInterieur, tagPolitique),
+                ft(factRetailleauInterieur, tagSecurite),
+                ft(factRetailleauInterieur, tagImmigration),
+                ft(factRetailleauInterieur, tagInstitutionnel),
+                // Ruffin — Rupture LFI
+                ft(factRuffinRupture, tagPolitique),
+                ft(factRuffinRupture, tagPartis),
+                ft(factRuffinRupture, tagControverse),
+                // Coquerel — Commission des finances
+                ft(factCoquerelFinances, tagPolitique),
+                ft(factCoquerelFinances, tagAssembleeNationale),
+                ft(factCoquerelFinances, tagBudget),
+                ft(factCoquerelFinances, tagEconomie),
+                // Boyard — Hanouna
+                ft(factBoyardHanouna, tagMedias),
+                ft(factBoyardHanouna, tagControverse),
+                ft(factBoyardHanouna, tagPolitique),
+                // Castaner — Réélu député
+                ft(factCastaner, tagPolitique),
+                ft(factCastaner, tagElection),
+                ft(factCastaner, tagSecurite),
+                ft(factCastaner, tagAssembleeNationale),
+                // Chassaigne — Doyen AN
+                ft(factChassaigneDoyen, tagPolitique),
+                ft(factChassaigneDoyen, tagInstitutionnel),
+                ft(factChassaigneDoyen, tagAssembleeNationale),
+                // Roussel — Présidentielle PCF
+                ft(factRousselPresidentielle, tagElection),
+                ft(factRousselPresidentielle, tagPresidentielle),
+                ft(factRousselPresidentielle, tagPartis),
+                ft(factRousselPresidentielle, tagSocial),
+                // Fesneau — Crise agricole
+                ft(factFesneauAgriculture, tagAgriculture),
+                ft(factFesneauAgriculture, tagEconomie),
+                ft(factFesneauAgriculture, tagSocial),
+                ft(factFesneauAgriculture, tagPolitique),
+                ft(factFesneauAgriculture, tagControverse),
+            ]
+
+            await tx.insert(models.factTag).values(allFactTags)
+            console.log(`  → ${allFactTags.length} fact-tag assignments seeded.`)
 
 
             // ================================================================

@@ -1,5 +1,5 @@
 import { createRoute } from "@tanstack/react-router"
-import { PersonPage } from "../../../../features/person/personPage"
+import { PersonPage } from "../../../../features/collection/person/personPage"
 import { collectionLayoutRoute } from "../collectionLayoutRoute"
 
 

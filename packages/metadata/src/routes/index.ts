@@ -22,5 +22,7 @@ export { upsertPersonRoleRouteDefinition } from "./admin/personRole/upsertPerson
 export { upsertPoliticalPartyRouteDefinition } from "./admin/politicalParty/upsertPoliticalParty.route.js"
 export { upsertPersonPoliticalPartyRouteDefinition } from "./admin/personPoliticalParty/upsertPersonPoliticalParty.route.js"
 export { upsertFactRouteDefinition } from "./admin/fact/upsertFact.route.js"
+export { upsertTagRouteDefinition } from "./admin/tag/upsertTag.route.js"
+export { upsertFactTagRouteDefinition } from "./admin/factTag/upsertFactTag.route.js"
 export { upsertPublisherRouteDefinition } from "./admin/publisher/upsertPublisher.route.js"
 export { upsertSourceRouteDefinition } from "./admin/source/upsertSource.route.js"

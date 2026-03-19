@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router"
 import { css } from "../../../styled-system/css/css"
 
 
@@ -36,80 +37,94 @@ export function PrivacyPage() {
                             letterSpacing: "-0.02em",
                         })}
                     >
-                        Politique de confidentialite
+                        Politique de confidentialité
                     </h1>
                     <p className={css({ color: "neutral/50", fontSize: "1rem", lineHeight: "1.6" })}>
-                        Comment nous collectons, utilisons et protegeons vos donnees personnelles.
+                        Comment nous collectons, utilisons et protégeons vos données personnelles.
                     </p>
                 </div>
 
                 <section className={css({ display: "flex", flexDirection: "column", gap: "0.75rem" })}>
+                    <p>
+                        Le terme Service est défini dans les{" "}
+                        <Link
+                            to="/cgu"
+                            className={css({ color: "primary", _hover: { textDecoration: "underline" } })}
+                        >
+                            conditions générales d'utilisation (CGU)
+                        </Link>
+                    </p>
                     <h2 className={css({ color: "neutral", fontSize: "1.25rem", fontWeight: "400" })}>
                         1. Responsable du traitement
                     </h2>
                     <p className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.6" })}>
-                        Le responsable du traitement des donnees personnelles est Barbote SAS, 93 rue Sedaine, 75011 Paris, France. Pour toute question relative a vos donnees personnelles, vous pouvez nous contacter a l'adresse{" "}
-                        <a
-                            href="mailto:contact@barbote.studio"
+                        Le responsable du traitement des données personnelles est l'éditeur du Service, défini dans les{" "}
+                        <Link
+                            to="/mentions-légales"
                             className={css({ color: "primary", _hover: { textDecoration: "underline" } })}
                         >
-                            contact@barbote.studio
+                            mentions légales
+                        </Link>
+                        . Pour toute question relative à vos données personnelles, vous pouvez nous contacter à l'adresse{" "}
+                        <a
+                            href="mailto:contact@openregistre.com"
+                            className={css({ color: "primary", _hover: { textDecoration: "underline" } })}
+                        >
+                            contact@openregistre.com
                         </a>.
                     </p>
                 </section>
 
                 <section className={css({ display: "flex", flexDirection: "column", gap: "0.75rem" })}>
                     <h2 className={css({ color: "neutral", fontSize: "1.25rem", fontWeight: "400" })}>
-                        2. Donnees collectees
+                        2. Données collectées
                     </h2>
                     <p className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.6" })}>
-                        Dans le cadre de l'utilisation du Service, nous pouvons collecter les donnees suivantes :
+                        Dans le cadre de l'utilisation du Service, nous pouvons collecter les données suivantes :
                     </p>
                     <ul className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.8", paddingLeft: "1.5rem", listStyleType: "disc" })}>
-                        <li>Donnees d'inscription : adresse e-mail, mot de passe (chiffre)</li>
-                        <li>Donnees de navigation : pages consultees, recherches effectuees, horodatage des visites</li>
-                        <li>Donnees techniques : adresse IP, type de navigateur, systeme d'exploitation</li>
+                        <li>Données de consultation : pages consultées, recherches effectuées, horodatage des viServices</li>
+                        <li>Données techniques de log : adresse IP, type de navigateur, système d'exploitation</li>
+                    </ul>
+                    <p className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.6" })}>
+                        Aucune donnée personnelle directement identifiable (nom, adresse e-mail, etc.) n'est collectée.
+                    </p>
+                </section>
+
+                <section className={css({ display: "flex", flexDirection: "column", gap: "0.75rem" })}>
+                    <h2 className={css({ color: "neutral", fontSize: "1.25rem", fontWeight: "400" })}>
+                        3. Finalités du traitement
+                    </h2>
+                    <p className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.6" })}>
+                        Les données collectées sont utilisées pour :
+                    </p>
+                    <ul className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.8", paddingLeft: "1.5rem", listStyleType: "disc" })}>
+                        <li>Fournir et améliorer le Service</li>
+                        <li>Assurer la sécurité du Service</li>
+                        <li>Établir des statistiques d'utilisation anonymisées</li>
                     </ul>
                 </section>
 
                 <section className={css({ display: "flex", flexDirection: "column", gap: "0.75rem" })}>
                     <h2 className={css({ color: "neutral", fontSize: "1.25rem", fontWeight: "400" })}>
-                        3. Finalites du traitement
+                        4. Base légale
                     </h2>
                     <p className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.6" })}>
-                        Les donnees collectees sont utilisees pour :
+                        Le traitement de vos données repose sur :
                     </p>
                     <ul className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.8", paddingLeft: "1.5rem", listStyleType: "disc" })}>
-                        <li>Fournir et ameliorer le Service</li>
-                        <li>Gerer les comptes utilisateurs</li>
-                        <li>Assurer la securite du Service</li>
-                        <li>Etablir des statistiques d'utilisation anonymisees</li>
+                        <li>L'exécution du contrat (CGU) pour les données nécessaires au fonctionnement du Service</li>
+                        <li>L'intérêt légitime pour les statistiques d'utilisation et la sécurité</li>
+                        <li>Le consentement pour toute collecte supplémentaire éventuelle</li>
                     </ul>
                 </section>
 
                 <section className={css({ display: "flex", flexDirection: "column", gap: "0.75rem" })}>
                     <h2 className={css({ color: "neutral", fontSize: "1.25rem", fontWeight: "400" })}>
-                        4. Base legale
+                        5. Durée de conservation
                     </h2>
                     <p className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.6" })}>
-                        Le traitement de vos donnees repose sur :
-                    </p>
-                    <ul className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.8", paddingLeft: "1.5rem", listStyleType: "disc" })}>
-                        <li>L'execution du contrat (CGU) pour les donnees necessaires au fonctionnement du Service</li>
-                        <li>L'interet legitime pour les statistiques d'utilisation et la securite</li>
-                        <li>Le consentement pour toute collecte supplementaire eventuelle</li>
-                    </ul>
-                </section>
-
-                <section className={css({ display: "flex", flexDirection: "column", gap: "0.75rem" })}>
-                    <h2 className={css({ color: "neutral", fontSize: "1.25rem", fontWeight: "400" })}>
-                        5. Duree de conservation
-                    </h2>
-                    <p className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.6" })}>
-                        Les donnees personnelles sont conservees pendant la duree d'utilisation du Service. En cas de suppression de compte, les donnees sont supprimees dans un delai de 30 jours, a l'exception des donnees que nous sommes tenus de conserver pour des raisons legales.
-                    </p>
-                    <p className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.6" })}>
-                        Les donnees de navigation et les logs techniques sont conserves pendant une duree maximale de 12 mois.
+                        Les données de consultation sont conservées indéfiniment. Les logs techniques sont conservés pendant une durée maximale de 12 mois.
                     </p>
                 </section>
 
@@ -118,25 +133,25 @@ export function PrivacyPage() {
                         6. Destinataires
                     </h2>
                     <p className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.6" })}>
-                        Vos donnees personnelles ne sont transmises a aucun tiers. Seuls les membres habilites de l'equipe Barbote SAS ont acces aux donnees, dans la stricte mesure necessaire au fonctionnement et a la maintenance du Service.
+                        Vos données personnelles ne sont transmises à aucun tiers. Seuls les membres habilités de l'équipe ont accès aux données, dans la stricte mesure nécessaire au fonctionnement et à la maintenance du Service.
                     </p>
                 </section>
 
                 <section className={css({ display: "flex", flexDirection: "column", gap: "0.75rem" })}>
                     <h2 className={css({ color: "neutral", fontSize: "1.25rem", fontWeight: "400" })}>
-                        7. Transferts hors Union europeenne
+                        7. Transferts hors Union européenne
                     </h2>
                     <p className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.6" })}>
-                        Aucun transfert de donnees hors de l'Union europeenne n'est effectue. L'ensemble des donnees est heberge en France par OVH.
+                        Aucun transfert de données hors de l'Union européenne n'est effectué. L'ensemble des données est hébergé en France par OVH.
                     </p>
                 </section>
 
                 <section className={css({ display: "flex", flexDirection: "column", gap: "0.75rem" })}>
                     <h2 className={css({ color: "neutral", fontSize: "1.25rem", fontWeight: "400" })}>
-                        8. Securite
+                        8. Sécurité
                     </h2>
                     <p className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.6" })}>
-                        Nous mettons en oeuvre les mesures techniques et organisationnelles appropriees pour assurer la securite et la confidentialite de vos donnees personnelles, notamment le chiffrement des mots de passe, l'utilisation du protocole HTTPS et la restriction des acces aux donnees.
+                        Nous mettons en œuvre les mesures techniques et organisationnelles appropriées pour assurer la sécurité et la confidentialité des données, notamment via l'utilisation du protocole HTTPS et la restriction des accès aux données.
                     </p>
                 </section>
 
@@ -145,33 +160,33 @@ export function PrivacyPage() {
                         9. Vos droits
                     </h2>
                     <p className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.6" })}>
-                        Conformement au Reglement General sur la Protection des Donnees (RGPD), vous disposez des droits suivants :
+                        Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez des droits suivants :
                     </p>
                     <ul className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.8", paddingLeft: "1.5rem", listStyleType: "disc" })}>
-                        <li>Droit d'acces a vos donnees personnelles</li>
-                        <li>Droit de rectification des donnees inexactes</li>
-                        <li>Droit a l'effacement de vos donnees</li>
-                        <li>Droit a la limitation du traitement</li>
-                        <li>Droit a la portabilite de vos donnees</li>
+                        <li>Droit d'accès à vos données personnelles</li>
+                        <li>Droit de rectification des données inexactes</li>
+                        <li>Droit à l'effacement de vos données</li>
+                        <li>Droit à la limitation du traitement</li>
+                        <li>Droit à la portabilité de vos données</li>
                         <li>Droit d'opposition au traitement</li>
                     </ul>
                     <p className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.6" })}>
-                        Pour exercer ces droits, contactez-nous a l'adresse{" "}
+                        Pour exercer ces droits, contactez-nous à l'adresse{" "}
                         <a
-                            href="mailto:contact@barbote.studio"
+                            href="mailto:contact@openregistre.com"
                             className={css({ color: "primary", _hover: { textDecoration: "underline" } })}
                         >
-                            contact@barbote.studio
-                        </a>. Nous nous engageons a repondre dans un delai d'un mois.
+                            contact@openregistre.com
+                        </a>. Nous nous engageons à répondre dans un délai d'un mois.
                     </p>
                 </section>
 
                 <section className={css({ display: "flex", flexDirection: "column", gap: "0.75rem" })}>
                     <h2 className={css({ color: "neutral", fontSize: "1.25rem", fontWeight: "400" })}>
-                        10. Reclamation
+                        10. Réclamation
                     </h2>
                     <p className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.6" })}>
-                        Si vous estimez que le traitement de vos donnees personnelles constitue une violation du RGPD, vous avez le droit d'introduire une reclamation aupres de la Commission Nationale de l'Informatique et des Libertes (CNIL) :{" "}
+                        Si vous estimez que le traitement de vos données personnelles constitue une violation du RGPD, vous avez le droit d'introduire une réclamation auprès de la Commission Nationale de l'Informatique et des Libertés (CNIL) :{" "}
                         <a
                             href="https://www.cnil.fr"
                             target="_blank"
@@ -184,7 +199,7 @@ export function PrivacyPage() {
                 </section>
 
                 <p className={css({ color: "neutral/25", fontSize: "0.8125rem", paddingTop: "1rem" })}>
-                    Derniere mise a jour : 18 mars 2026
+                    Dernière mise à jour : 18 mars 2026
                 </p>
             </div>
         </div>

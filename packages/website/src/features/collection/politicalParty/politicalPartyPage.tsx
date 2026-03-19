@@ -1,11 +1,11 @@
 import { readPoliticalPartyRouteDefinition } from "@openregistre/metadata/routes"
 import { Link, useParams } from "@tanstack/react-router"
-import { css } from "../../../styled-system/css/css"
-import { CircularLoader } from "../../components/circularLoader"
-import { Chip } from "../../components/data/chip"
-import { ActionBar } from "../../components/layouts/actionBar"
-import { Separator } from "../../components/layouts/separator"
-import { useDataFromAPI } from "../../utilities/useDataFromAPI"
+import { css } from "../../../../styled-system/css/css"
+import { CircularLoader } from "../../../components/circularLoader"
+import { Chip } from "../../../components/data/chip"
+import { ActionBar } from "../../../components/layouts/actionBar"
+import { Separator } from "../../../components/layouts/separator"
+import { useDataFromAPI } from "../../../utilities/useDataFromAPI"
 
 
 export function PoliticalPartyPage() {

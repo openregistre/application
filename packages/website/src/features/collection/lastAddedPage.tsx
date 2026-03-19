@@ -217,7 +217,7 @@ export function LastAddedPage() {
                                         <span className={css({ fontSize: "0.875rem", fontWeight: "400", color: "neutral" })}>
                                             {fact.title}
                                         </span>
-                                        <Chip text={fact.category} />
+                                        <Chip text={fact.tags[0]?.label} />
                                     </div>
 
                                     <p
@@ -337,7 +337,9 @@ export function LastAddedPage() {
                         )
                     )}
                 </div>
-            ) : null}
+            ) : (
+                <EmptyState text="Aucune donnée disponible." />
+            )}
         </div>
     )
 }

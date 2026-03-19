@@ -1,5 +1,5 @@
 import { createRoute } from "@tanstack/react-router"
-import { PoliticalPartyPage } from "../../../../features/politicalParty/politicalPartyPage"
+import { PoliticalPartyPage } from "../../../../features/collection/politicalParty/politicalPartyPage"
 import { collectionLayoutRoute } from "../collectionLayoutRoute"
 
 

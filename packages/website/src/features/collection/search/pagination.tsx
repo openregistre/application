@@ -1,7 +1,7 @@
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react"
-import { css } from "../../../styled-system/css/css"
-import { Button } from "../../components/button/button"
-import { ButtonOutlineContent } from "../../components/button/buttonOutlineContent"
+import { css } from "../../../../styled-system/css/css"
+import { Button } from "../../../components/button/button.tsx"
+import { ButtonOutlineContent } from "../../../components/button/buttonOutlineContent.tsx"
 
 
 const PAGE_SIZE = 20

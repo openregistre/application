@@ -5,6 +5,7 @@ const outlineRecipe = sva({
     slots: ["container", "leftIcon", "text", "rightIcon"],
     base: {
         container: {
+            width: "fit-content",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -14,7 +15,7 @@ const outlineRecipe = sva({
             boxSizing: "border-box",
             cursor: "pointer",
             transition: "all",
-            transitionDuration: "200ms",
+            transitionDuration: "100ms",
             transitionTimingFunction: "ease-in-out",
             border: "1px solid",
             borderColor: "neutral/20",
@@ -80,6 +81,5 @@ const outlineRecipe = sva({
 })
 
 export function ButtonOutlineContent(props: ButtonContentProps) {
-    const classes = outlineRecipe({ color: props.color ?? "neutral" })
-    return renderButtonContent(props, classes)
+    return renderButtonContent(props, outlineRecipe.raw({ color: props.color ?? "neutral" }))
 }

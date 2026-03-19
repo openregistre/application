@@ -1,6 +1,9 @@
 import { IconBrandFacebook, IconBrandLinkedin, IconBrandX, IconCheck, IconLink, IconShare } from "@tabler/icons-react"
-import { useEffect, useRef, useState } from "react"
+import { useState, type Dispatch, type ReactNode, type SetStateAction } from "react"
 import { css } from "../../../styled-system/css/css"
+import { Button } from "../button/button.tsx"
+import { ButtonOutlineContent } from "../button/buttonOutlineContent.tsx"
+import { Popover } from "../layouts/popover.tsx"
 
 
 export function ShareButton(props: {
@@ -11,9 +14,7 @@ export function ShareButton(props: {
     /** Hashtags for X/Twitter (without #) */
     hashtags?: Array<string>
 }) {
-    const [isOpen, setIsOpen] = useState(false)
     const [isCopied, setIsCopied] = useState(false)
-    const menuRef = useRef<HTMLDivElement>(null)
 
     const url = window.location.href
     const hashtags = props.hashtags ?? ["OpenRegistre"]
@@ -21,21 +22,7 @@ export function ShareButton(props: {
         ? `${props.title} — ${props.description}`
         : props.title
 
-    // Close menu on outside click
-    useEffect(() => {
-        if (!isOpen) return
-
-        function handleClickOutside(event: MouseEvent) {
-            if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-                setIsOpen(false)
-            }
-        }
-
-        document.addEventListener("mousedown", handleClickOutside)
-        return () => document.removeEventListener("mousedown", handleClickOutside)
-    }, [isOpen])
-
-    function shareOnX() {
+    function shareOnX(setIsOpen: Dispatch<SetStateAction<boolean>>) {
         const text = encodeURIComponent(shareText)
         const tags = encodeURIComponent(hashtags.join(","))
         const u = encodeURIComponent(url)
@@ -47,7 +34,7 @@ export function ShareButton(props: {
         setIsOpen(false)
     }
 
-    function shareOnFacebook() {
+    function shareOnFacebook(setIsOpen: Dispatch<SetStateAction<boolean>>) {
         const u = encodeURIComponent(url)
         window.open(
             `https://www.facebook.com/sharer/sharer.php?u=${u}`,
@@ -57,7 +44,7 @@ export function ShareButton(props: {
         setIsOpen(false)
     }
 
-    function shareOnLinkedIn() {
+    function shareOnLinkedIn(setIsOpen: Dispatch<SetStateAction<boolean>>) {
         const u = encodeURIComponent(url)
         window.open(
             `https://www.linkedin.com/sharing/share-offsite/?url=${u}`,
@@ -67,7 +54,7 @@ export function ShareButton(props: {
         setIsOpen(false)
     }
 
-    async function copyLink() {
+    async function copyLink(setIsOpen: Dispatch<SetStateAction<boolean>>) {
         try {
             await navigator.clipboard.writeText(url)
             setIsCopied(true)
@@ -81,77 +68,40 @@ export function ShareButton(props: {
     }
 
     return (
-        <div
-            ref={menuRef}
-            className={css({
-                position: "relative",
-                display: "inline-flex",
-            })}
+        <Popover
+            triggerElement={
+                <button>
+                    <ButtonOutlineContent
+                        leftIcon={<IconShare />}
+                    />
+                </button>
+            }
+            position="bottom"
+            align="end"
         >
-            {/* Trigger */}
-            <button
-                type="button"
-                onClick={() => setIsOpen(!isOpen)}
-                className={css({
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "0.375rem",
-                    paddingX: "0.625rem",
-                    paddingY: "0.375rem",
-                    borderRadius: "0.375rem",
-                    borderWidth: "1px",
-                    borderColor: "neutral/15",
-                    backgroundColor: "white",
-                    color: "neutral/50",
-                    fontSize: "0.8125rem",
-                    lineHeight: "1",
-                    cursor: "pointer",
-                    transition: "all",
-                    transitionDuration: "150ms",
-                    _hover: {
-                        borderColor: "neutral/25",
-                        color: "neutral/75",
-                        boxShadow: "sm",
-                    },
-                })}
-            >
-                <IconShare size={14} />
-                Partager
-            </button>
-
-            {/* Dropdown */}
-            {isOpen && (
+            {({ setIsOpen }) => (
                 <div
                     className={css({
-                        position: "absolute",
-                        top: "calc(100% + 0.375rem)",
-                        right: "0",
-                        minWidth: "12rem",
-                        borderRadius: "0.5rem",
-                        borderWidth: "1px",
-                        borderColor: "neutral/10",
-                        backgroundColor: "white",
-                        boxShadow: "lg",
-                        zIndex: "50",
-                        overflow: "hidden",
-                        animation: "fadeIn",
-                        animationDuration: "150ms",
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "start",
+                        alignItems: "start",
                     })}
                 >
                     <ShareMenuItem
                         icon={<IconBrandX size={16} />}
                         label="Partager sur X"
-                        onClick={shareOnX}
+                        onClick={() => shareOnX(setIsOpen)}
                     />
                     <ShareMenuItem
                         icon={<IconBrandFacebook size={16} />}
                         label="Partager sur Facebook"
-                        onClick={shareOnFacebook}
+                        onClick={() => shareOnFacebook(setIsOpen)}
                     />
                     <ShareMenuItem
                         icon={<IconBrandLinkedin size={16} />}
                         label="Partager sur LinkedIn"
-                        onClick={shareOnLinkedIn}
+                        onClick={() => shareOnLinkedIn(setIsOpen)}
                     />
                     <div
                         className={css({
@@ -162,46 +112,57 @@ export function ShareButton(props: {
                     />
                     <ShareMenuItem
                         icon={isCopied ? <IconCheck size={16} /> : <IconLink size={16} />}
-                        label={isCopied ? "Lien copie !" : "Copier le lien"}
-                        onClick={copyLink}
+                        label={isCopied ? "Lien copié !" : "Copier le lien"}
+                        onClick={() => copyLink(setIsOpen)}
                     />
                 </div>
             )}
-        </div>
+        </Popover>
     )
 }
 
 
 function ShareMenuItem(props: {
-    icon: React.ReactNode
+    icon: ReactNode
     label: string
     onClick: () => void
 }) {
     return (
-        <button
-            type="button"
-            onClick={props.onClick}
-            className={css({
-                width: "100%",
-                display: "flex",
-                alignItems: "center",
-                gap: "0.5rem",
-                paddingX: "0.75rem",
-                paddingY: "0.5rem",
-                fontSize: "0.8125rem",
-                color: "neutral/75",
-                backgroundColor: "transparent",
-                border: "none",
-                cursor: "pointer",
-                transition: "background-color",
-                transitionDuration: "100ms",
-                _hover: {
-                    backgroundColor: "neutral/5",
-                },
-            })}
-        >
-            {props.icon}
-            {props.label}
-        </button>
+        <Button onClick={props.onClick}>
+            <div
+                className={css({
+                    width: "100%",
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "start",
+                    alignItems: "center",
+                    gap: "0.5rem",
+                    paddingX: "0.75rem",
+                    paddingY: "0.5rem",
+                    cursor: "pointer",
+                    _hover: { backgroundColor: "neutral/5" },
+                    transition: "all",
+                    transitionDuration: "100ms",
+                })}
+            >
+                <span
+                    className={css({
+                        flexShrink: "0",
+                        stroke: "neutral/50",
+                    })}
+                >
+                    {props.icon}
+                </span>
+                <span
+                    className={css({
+                        fontSize: "0.8125rem",
+                        whiteSpace: "nowrap",
+                        color: "neutral",
+                    })}
+                >
+                    {props.label}
+                </span>
+            </div>
+        </Button>
     )
 }

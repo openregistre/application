@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router"
 import type { ComponentProps, MouseEventHandler, ReactNode } from "react"
-import { css } from "../../../styled-system/css/css.js"
-import type { SystemStyleObject } from "../../../styled-system/types"
+import { css, type Styles } from "../../../styled-system/css/css.js"
 import type { ValidParams, ValidRoutes } from "../../routes/applicationRouter.js"
 
 /**
@@ -20,7 +19,7 @@ export function LinkButton(props: {
     rel?: ComponentProps<typeof Link>["rel"]
     title?: string
     disabled?: boolean
-    className?: SystemStyleObject
+    className?: Styles
     onClick?: MouseEventHandler<HTMLAnchorElement> | undefined
     children: ReactNode
 }) {

@@ -1,6 +1,6 @@
 import { models } from "@openregistre/metadata/orm"
 import { lastAddedRouteDefinition } from "@openregistre/metadata/routes"
-import { desc, eq } from "drizzle-orm"
+import { desc, eq, inArray } from "drizzle-orm"
 import { routeHandler } from "../../../utilities/api/routeHandler.js"
 import { Clients } from "../../../utilities/clients.js"
 import { routeResponse } from "../../../utilities/route/routeResponse.js"
@@ -29,7 +29,6 @@ export const lastAddedRoute = routeHandler({
                     title: models.fact.title,
                     description: models.fact.description,
                     occurredAt: models.fact.occurredAt,
-                    category: models.fact.category,
                     person: {
                         id: models.person.id,
                         fullName: models.person.fullName,
@@ -65,12 +64,36 @@ export const lastAddedRoute = routeHandler({
                 .limit(LIMIT),
         ])
 
+        // Fetch tags for the returned facts
+        const factIds = facts.map((f) => f.id)
+        const factTags = factIds.length > 0
+            ? await Clients.platformPostgresql
+                .select({
+                    idFact: models.factTag.idFact,
+                    id: models.tag.id,
+                    label: models.tag.label,
+                })
+                .from(models.factTag)
+                .innerJoin(models.tag, eq(models.factTag.idTag, models.tag.id))
+                .where(inArray(models.factTag.idFact, factIds))
+            : []
+
+        const tagsByFactId = new Map<string, Array<{ id: string; label: string }>>()
+        for (const ft of factTags) {
+            const existing = tagsByFactId.get(ft.idFact) ?? []
+            existing.push({ id: ft.id, label: ft.label })
+            tagsByFactId.set(ft.idFact, existing)
+        }
+
         return routeResponse({
             context: context,
             statusCode: 200,
             bodyValue: {
                 persons,
-                facts,
+                facts: facts.map((f) => ({
+                    ...f,
+                    tags: tagsByFactId.get(f.id) ?? [],
+                })),
                 sources,
             },
         })

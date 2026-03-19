@@ -1,6 +1,8 @@
 import { IconArrowLeft } from "@tabler/icons-react"
-import { Link } from "@tanstack/react-router"
+import { useRouter } from "@tanstack/react-router"
 import { css } from "../../../styled-system/css/css"
+import { Button } from "../button/button.tsx"
+import { ButtonGhostContent } from "../button/buttonGhostContent.tsx"
 import { ShareButton } from "../share/shareButton"
 
 
@@ -12,13 +14,19 @@ export function ActionBar(props: {
         hashtags?: Array<string>
     }
 }) {
+    const router = useRouter()
+
     return (
         <div
             className={css({
+                // position: "sticky",
+                // top: 0,
+                // zIndex: 10,
                 width: "100%",
                 borderBottomWidth: "1px",
                 borderBottomColor: "neutral/10",
                 backgroundColor: "white",
+                padding: "1rem",
             })}
         >
             <div
@@ -26,8 +34,6 @@ export function ActionBar(props: {
                     width: "100%",
                     maxWidth: "64rem",
                     marginX: "auto",
-                    paddingX: "1.5rem",
-                    paddingY: "0.5rem",
                     display: "flex",
                     flexDirection: "row",
                     justifyContent: "space-between",
@@ -35,20 +41,14 @@ export function ActionBar(props: {
                     gap: "1rem",
                 })}
             >
-                <Link
-                    to="/"
-                    className={css({
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "0.25rem",
-                        color: "neutral/50",
-                        fontSize: "0.875rem",
-                        _hover: { color: "neutral/75" },
-                    })}
+                <Button
+                    onClick={() => { router.history.back() }}
                 >
-                    <IconArrowLeft size={14} />
-                    Retour
-                </Link>
+                    <ButtonGhostContent
+                        leftIcon={<IconArrowLeft />}
+                        text="Retour"
+                    />
+                </Button>
 
                 {props.share && (
                     <ShareButton

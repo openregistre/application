@@ -22,7 +22,10 @@ export const lastAddedRouteDefinition = routeDefinition({
                 title: v.nonNullable(stringSchema),
                 description: v.nonNullable(stringSchema),
                 occurredAt: v.nullable(stringSchema),
-                category: v.nullable(stringSchema),
+                tags: v.array(v.object({
+                    id: v.nonNullable(idSchema),
+                    label: v.nonNullable(stringSchema),
+                })),
                 person: v.object({
                     id: v.nonNullable(idSchema),
                     fullName: v.nonNullable(stringSchema),

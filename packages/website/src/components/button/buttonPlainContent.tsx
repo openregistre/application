@@ -5,6 +5,7 @@ const plainRecipe = sva({
     slots: ["container", "leftIcon", "text", "rightIcon"],
     base: {
         container: {
+            width: "fit-content",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -14,7 +15,7 @@ const plainRecipe = sva({
             boxSizing: "border-box",
             cursor: "pointer",
             transition: "all",
-            transitionDuration: "200ms",
+            transitionDuration: "100ms",
             transitionTimingFunction: "ease-in-out",
             border: "1px solid",
             borderColor: "rgba(31, 35, 40, 0.15)",
@@ -75,6 +76,5 @@ const plainRecipe = sva({
 })
 
 export function ButtonPlainContent(props: ButtonContentProps) {
-    const classes = plainRecipe({ color: props.color ?? "neutral" })
-    return renderButtonContent(props, classes)
+    return renderButtonContent(props, plainRecipe.raw({ color: props.color ?? "neutral" }))
 }

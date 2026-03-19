@@ -52,7 +52,6 @@ export const upsertFactRoute = routeHandler({
                 .set({
                     description: body.description,
                     occurredAt: body.occurredAt ?? existing[0].occurredAt,
-                    category: body.category ?? existing[0].category,
                     lastUpdatedAt: new Date().toISOString(),
                 })
                 .where(eq(models.fact.id, existing[0].id))
@@ -77,7 +76,6 @@ export const upsertFactRoute = routeHandler({
                 title: body.title,
                 description: body.description,
                 occurredAt: body.occurredAt ?? null,
-                category: body.category ?? null,
                 isFlagged: false,
                 lastUpdatedAt: null,
                 createdAt: new Date().toISOString(),

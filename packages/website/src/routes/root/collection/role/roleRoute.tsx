@@ -1,5 +1,5 @@
 import { createRoute } from "@tanstack/react-router"
-import { RolePage } from "../../../../features/role/rolePage"
+import { RolePage } from "../../../../features/collection/role/rolePage"
 import { collectionLayoutRoute } from "../collectionLayoutRoute"
 
 

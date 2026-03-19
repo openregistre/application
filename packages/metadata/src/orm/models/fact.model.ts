@@ -1,4 +1,5 @@
 import { boolean, index, pgTable, text } from "drizzle-orm/pg-core"
+
 import { idColumn } from "../../components/models/idColumn.js"
 import { timestampColumn } from "../../components/models/timestampColumn.js"
 import { personModel } from "./person.model.js"
@@ -26,9 +27,6 @@ export const factModel = pgTable(
 
         occurredAt:
             text("occurred_at"),
-
-        category:
-            text("category"),
 
         isFlagged:
             boolean("is_flagged")

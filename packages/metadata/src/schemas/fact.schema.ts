@@ -32,11 +32,6 @@ export const factSchema = v.object({
             stringSchema
         ),
 
-    "category":
-        v.nullable(
-            stringSchema
-        ),
-
     "isFlagged":
         v.nonNullable(
             booleanSchema

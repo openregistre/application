@@ -39,7 +39,10 @@ export const readPersonRouteDefinition = routeDefinition({
                 title: v.nonNullable(stringSchema),
                 description: v.nonNullable(stringSchema),
                 occurredAt: v.nullable(stringSchema),
-                category: v.nullable(stringSchema),
+                tags: v.array(v.object({
+                    id: v.nonNullable(idSchema),
+                    label: v.nonNullable(stringSchema),
+                })),
                 sources: v.array(v.object({
                     id: v.nonNullable(idSchema),
                     url: v.nonNullable(stringSchema),

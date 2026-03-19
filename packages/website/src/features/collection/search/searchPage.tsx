@@ -6,12 +6,12 @@ import {
 import { IconExternalLink, IconSearch } from "@tabler/icons-react"
 import { Link, useNavigate } from "@tanstack/react-router"
 import { useState } from "react"
-import { css } from "../../../styled-system/css/css"
-import { cx } from "../../../styled-system/css/cx"
-import { CircularLoader } from "../../components/circularLoader"
-import { Chip } from "../../components/data/chip"
-import { searchRoute } from "../../routes/root/collection/searchRoute"
-import { useDataFromAPI } from "../../utilities/useDataFromAPI"
+import { css } from "../../../../styled-system/css/css"
+import { cx } from "../../../../styled-system/css/cx"
+import { CircularLoader } from "../../../components/circularLoader.tsx"
+import { Chip } from "../../../components/data/chip.tsx"
+import { searchRoute } from "../../../routes/root/collection/searchRoute.tsx"
+import { useDataFromAPI } from "../../../utilities/useDataFromAPI.ts"
 import { Pagination } from "./pagination"
 
 
@@ -404,7 +404,7 @@ function FactsResults(props: {
             title: string
             description: string
             occurredAt: string | null
-            category: string | null
+            tags: Array<{ id: string; label: string }>
             person: { id: string; fullName: string }
             similarity: number
         }>
@@ -460,7 +460,7 @@ function FactsResults(props: {
                         <span className={css({ fontSize: "1rem", fontWeight: "400", color: "neutral" })}>
                             {fact.title}
                         </span>
-                        <Chip text={fact.category} />
+                        <Chip text={fact.tags[0]?.label} />
                     </div>
 
                     <p

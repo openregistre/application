@@ -1,5 +1,5 @@
 import { createRoute } from "@tanstack/react-router"
-import { LastAddedPage } from "../../../features/lastAdded/lastAddedPage"
+import { LastAddedPage } from "../../../features/collection/lastAddedPage"
 import { collectionLayoutRoute } from "./collectionLayoutRoute"
 
 

@@ -14,7 +14,6 @@ export const upsertFactRouteDefinition = routeDefinition({
             title: v.nonNullable(stringSchema),
             description: v.nonNullable(stringSchema),
             occurredAt: v.optional(v.nullable(stringSchema)),
-            category: v.optional(v.nullable(stringSchema)),
         }),
         output: v.object({
             id: v.nonNullable(idSchema),

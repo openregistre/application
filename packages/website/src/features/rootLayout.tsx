@@ -1,6 +1,7 @@
 import { IconInfoCircle, IconSearch } from "@tabler/icons-react"
 import { Outlet } from "@tanstack/react-router"
 import { css } from "../../styled-system/css/css"
+import type { SystemStyleObject } from "../../styled-system/types/index"
 import { Button } from "../components/button/button.tsx"
 import { ButtonGhostContent } from "../components/button/buttonGhostContent.tsx"
 import { ButtonOutlineContent } from "../components/button/buttonOutlineContent.tsx"
@@ -11,7 +12,7 @@ import { Popover } from "../components/layouts/popover.tsx"
 import { Separator } from "../components/layouts/separator.tsx"
 
 
-const popoverLinkStyle = {
+const popoverLinkStyle: SystemStyleObject = {
     width: "100%",
     justifyContent: "start",
 }
@@ -29,14 +30,17 @@ export function RootLayout() {
                 justifyContent: "start",
                 alignItems: "start",
                 backgroundColor: "background",
+                overflowX: "hidden",
+                overflowY: "auto",
+                scrollbarGutter: "stable",
             })}
         >
             {/* Top navigation bar */}
             <nav
                 className={css({
-                    position: "sticky",
-                    top: 0,
-                    zIndex: 10,
+                    // position: "sticky",
+                    // top: 0,
+                    // zIndex: 10,
                     width: "100%",
                     display: "flex",
                     justifyContent: "center",
@@ -135,7 +139,7 @@ export function RootLayout() {
                             align="end"
                             triggerElement={
                                 <Button>
-                                    <ButtonOutlineContent
+                                    <ButtonGhostContent
                                         leftIcon={<IconInfoCircle />}
                                     />
                                 </Button>
@@ -192,12 +196,12 @@ export function RootLayout() {
             <div
                 className={css({
                     width: "100%",
-                    flex: "1",
+                    height: "100%",
+                    maxHeight: "100%",
                     display: "flex",
                     flexDirection: "column",
-                    overflowX: "hidden",
-                    overflowY: "auto",
-                    padding: "1rem",
+                    justifyContent: "start",
+                    alignItems: "center",
                 })}
             >
                 <Outlet />

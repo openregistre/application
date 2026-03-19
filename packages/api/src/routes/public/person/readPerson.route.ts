@@ -26,6 +26,11 @@ export const readPersonRoute = routeHandler({
                                 publisher: true,
                             },
                         },
+                        factTags: {
+                            with: {
+                                tag: true,
+                            },
+                        },
                     },
                 },
                 personRoles: {
@@ -78,7 +83,10 @@ export const readPersonRoute = routeHandler({
                     title: fact.title,
                     description: fact.description,
                     occurredAt: fact.occurredAt,
-                    category: fact.category,
+                    tags: fact.factTags.map((ft) => ({
+                        id: ft.tag.id,
+                        label: ft.tag.label,
+                    })),
                     sources: fact.sources.map((source) => ({
                         id: source.id,
                         url: source.url,

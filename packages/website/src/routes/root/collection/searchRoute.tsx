@@ -1,5 +1,5 @@
 import { createRoute } from "@tanstack/react-router"
-import { SearchPage } from "../../../features/search/searchPage"
+import { SearchPage } from "../../../features/collection/search/searchPage.tsx"
 import { collectionLayoutRoute } from "./collectionLayoutRoute"
 
 

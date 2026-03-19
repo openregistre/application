@@ -7,12 +7,11 @@ export function CollectionLayout() {
         <div
             className={css({
                 width: "100%",
-                minHeight: "100dvh",
+                height: "100%",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "start",
                 alignItems: "start",
-                backgroundColor: "background",
             })}
         >
             <Outlet />
