@@ -10,7 +10,7 @@ import { css } from "../../../styled-system/css/css"
 import { cx } from "../../../styled-system/css/cx"
 import { CircularLoader } from "../../components/circularLoader"
 import { Chip } from "../../components/data/chip"
-import { searchRoute } from "../../routes/root/search/searchRoute"
+import { searchRoute } from "../../routes/root/collection/searchRoute"
 import { useDataFromAPI } from "../../utilities/useDataFromAPI"
 import { Pagination } from "./pagination"
 
@@ -54,7 +54,7 @@ export function SearchPage() {
         if (localQuery.trim() === "") return
 
         navigate({
-            to: "/bibliotheque/recherche",
+            to: "/collection/recherche",
             search: { q: localQuery.trim(), page: 1 },
         })
     }
@@ -62,14 +62,14 @@ export function SearchPage() {
     function handleTabChange(tab: SearchTab) {
         setActiveTab(tab)
         navigate({
-            to: "/bibliotheque/recherche",
+            to: "/collection/recherche",
             search: { q, page: 1 },
         })
     }
 
     function handlePageChange(newPage: number) {
         navigate({
-            to: "/bibliotheque/recherche",
+            to: "/collection/recherche",
             search: { q, page: newPage },
         })
     }
@@ -331,7 +331,7 @@ function PersonsResults(props: {
             {props.data.results.map((person) => (
                 <Link
                     key={person.id}
-                    to="/bibliotheque/personne/$id"
+                    to="/collection/personne/$id"
                     params={{ id: person.id }}
                     className={css({
                         width: "100%",
@@ -479,7 +479,7 @@ function FactsResults(props: {
 
                     <div className={css({ display: "flex", flexDirection: "row", alignItems: "center", gap: "0.5rem" })}>
                         <Link
-                            to="/bibliotheque/personne/$id"
+                            to="/collection/personne/$id"
                             params={{ id: fact.person.id }}
                             className={css({
                                 fontSize: "0.8125rem",

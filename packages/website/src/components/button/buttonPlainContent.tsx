@@ -5,7 +5,6 @@ const plainRecipe = sva({
     slots: ["container", "leftIcon", "text", "rightIcon"],
     base: {
         container: {
-            width: "fit-content",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",

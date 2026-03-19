@@ -1,9 +1,9 @@
 import { Link } from "@tanstack/react-router"
 import { css } from "../../../styled-system/css/css"
-import { Logo } from "../../components/layouts/logo"
+import { LogoIcon } from "../../components/layouts/logoIcon"
 
 
-export function MentionsLegalesPage() {
+export function TermsPage() {
     return (
         <div
             className={css({
@@ -42,7 +42,7 @@ export function MentionsLegalesPage() {
                             alignItems: "center",
                         })}
                     >
-                        <Logo />
+                        <LogoIcon />
                         <span
                             className={css({
                                 color: "primary",
@@ -79,52 +79,76 @@ export function MentionsLegalesPage() {
                             letterSpacing: "-0.02em",
                         })}
                     >
-                        Mentions legales
+                        Conditions Generales d'Utilisation
                     </h1>
                     <p className={css({ color: "neutral/50", fontSize: "1rem", lineHeight: "1.6" })}>
-                        Informations legales relatives au site OpenRegistre.
+                        Conditions regissant l'utilisation du service OpenRegistre.
                     </p>
                 </div>
 
                 <section className={css({ display: "flex", flexDirection: "column", gap: "0.75rem" })}>
                     <h2 className={css({ color: "neutral", fontSize: "1.25rem", fontWeight: "400" })}>
-                        Editeur du site
+                        1. Objet
                     </h2>
                     <p className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.6" })}>
-                        Le site OpenRegistre est edite par Barbote SAS, societe par actions simplifiee au capital variable, immatriculee au Registre du Commerce et des Societes sous le numero 908 719 503.
+                        Les presentes Conditions Generales d'Utilisation (ci-apres "CGU") ont pour objet de definir les modalites et conditions d'utilisation du service OpenRegistre (ci-apres "le Service"), accessible a l'adresse openregistre.fr, ainsi que les droits et obligations des utilisateurs.
+                    </p>
+                    <p className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.6" })}>
+                        L'utilisation du Service implique l'acceptation pleine et entiere des presentes CGU.
+                    </p>
+                </section>
+
+                <section className={css({ display: "flex", flexDirection: "column", gap: "0.75rem" })}>
+                    <h2 className={css({ color: "neutral", fontSize: "1.25rem", fontWeight: "400" })}>
+                        2. Description du service
+                    </h2>
+                    <p className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.6" })}>
+                        OpenRegistre est un moteur de recherche gratuit et open source consacre aux personnalites publiques francaises. Le Service permet de rechercher des informations sur les personnalites politiques, de consulter leurs faits marquants et d'acceder aux sources journalistiques associees.
+                    </p>
+                </section>
+
+                <section className={css({ display: "flex", flexDirection: "column", gap: "0.75rem" })}>
+                    <h2 className={css({ color: "neutral", fontSize: "1.25rem", fontWeight: "400" })}>
+                        3. Inscription
+                    </h2>
+                    <p className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.6" })}>
+                        L'inscription au Service est gratuite. Elle necessite la creation d'un compte utilisateur avec une adresse e-mail valide et un mot de passe. L'utilisateur s'engage a fournir des informations exactes et a maintenir la confidentialite de ses identifiants de connexion.
+                    </p>
+                    <p className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.6" })}>
+                        L'utilisateur est seul responsable de l'utilisation faite de son compte.
+                    </p>
+                </section>
+
+                <section className={css({ display: "flex", flexDirection: "column", gap: "0.75rem" })}>
+                    <h2 className={css({ color: "neutral", fontSize: "1.25rem", fontWeight: "400" })}>
+                        4. Utilisation du service
+                    </h2>
+                    <p className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.6" })}>
+                        L'utilisateur s'engage a utiliser le Service de maniere conforme aux lois et reglements en vigueur. Il est notamment interdit de :
                     </p>
                     <ul className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.8", paddingLeft: "1.5rem", listStyleType: "disc" })}>
-                        <li>Siege social : 93 rue Sedaine, 75011 Paris, France</li>
-                        <li>Numero de TVA intracommunautaire : FR02 908 719 503</li>
-                        <li>Directeur de la publication : Emile Sabatier</li>
-                        <li>
-                            Contact :{" "}
-                            <a
-                                href="mailto:contact@barbote.studio"
-                                className={css({ color: "primary", _hover: { textDecoration: "underline" } })}
-                            >
-                                contact@barbote.studio
-                            </a>
-                        </li>
+                        <li>Utiliser le Service a des fins illegales ou non autorisees</li>
+                        <li>Tenter d'acceder de maniere non autorisee aux systemes ou reseaux du Service</li>
+                        <li>Collecter ou stocker des donnees personnelles d'autres utilisateurs</li>
+                        <li>Interferer avec le bon fonctionnement du Service</li>
                     </ul>
                 </section>
 
                 <section className={css({ display: "flex", flexDirection: "column", gap: "0.75rem" })}>
                     <h2 className={css({ color: "neutral", fontSize: "1.25rem", fontWeight: "400" })}>
-                        Hebergement
+                        5. Donnees et responsabilite
                     </h2>
                     <p className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.6" })}>
-                        Le site est heberge par OVH SAS, immatriculee au RCS Lille Metropole sous le numero 424 761 419 00045.
+                        Les informations presentees sur OpenRegistre sont issues de sources publiques et journalistiques. Chaque fait est systematiquement associe a ses sources. Bien que nous nous efforcions de garantir l'exactitude et l'actualite des informations, nous ne pouvons garantir l'absence totale d'erreurs.
                     </p>
-                    <ul className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.8", paddingLeft: "1.5rem", listStyleType: "disc" })}>
-                        <li>Siege social : 2 rue Kellermann, 59100 Roubaix, France</li>
-                        <li>Telephone : 1007</li>
-                    </ul>
+                    <p className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.6" })}>
+                        Toute personne concernee par une information presentee sur le Service peut demander une correction ou une suppression en nous contactant.
+                    </p>
                 </section>
 
                 <section className={css({ display: "flex", flexDirection: "column", gap: "0.75rem" })}>
                     <h2 className={css({ color: "neutral", fontSize: "1.25rem", fontWeight: "400" })}>
-                        Propriete intellectuelle
+                        6. Propriete intellectuelle
                     </h2>
                     <p className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.6" })}>
                         Le code source d'OpenRegistre est distribue sous licence{" "}
@@ -135,48 +159,49 @@ export function MentionsLegalesPage() {
                             className={css({ color: "primary", _hover: { textDecoration: "underline" } })}
                         >
                             AGPL-3.0
-                        </a>. Le code source est disponible sur{" "}
-                        <a
-                            href="https://github.com/sketchlabdev/openregistre"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={css({ color: "primary", _hover: { textDecoration: "underline" } })}
-                        >
-                            GitHub
-                        </a>.
+                        </a>. Les contenus editoriaux et les donnees structurees du Service restent la propriete de Barbote SAS, sauf mention contraire.
                     </p>
                 </section>
 
                 <section className={css({ display: "flex", flexDirection: "column", gap: "0.75rem" })}>
                     <h2 className={css({ color: "neutral", fontSize: "1.25rem", fontWeight: "400" })}>
-                        Donnees personnelles
+                        7. Protection des donnees
                     </h2>
                     <p className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.6" })}>
-                        Pour en savoir plus sur la maniere dont nous traitons vos donnees personnelles, veuillez consulter notre{" "}
+                        Le traitement des donnees personnelles est decrit dans notre{" "}
                         <Link
-                            to="/confidentialite"
+                            to="/confidentialité"
                             className={css({ color: "primary", _hover: { textDecoration: "underline" } })}
                         >
                             politique de confidentialite
-                        </Link>.
+                        </Link>. En utilisant le Service, l'utilisateur accepte les pratiques decrites dans cette politique.
                     </p>
                 </section>
 
                 <section className={css({ display: "flex", flexDirection: "column", gap: "0.75rem" })}>
                     <h2 className={css({ color: "neutral", fontSize: "1.25rem", fontWeight: "400" })}>
-                        Cookies
+                        8. Resiliation
                     </h2>
                     <p className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.6" })}>
-                        Le site OpenRegistre utilise uniquement des cookies strictement necessaires au fonctionnement du service (authentification, preferences de session). Aucun cookie publicitaire ou de suivi n'est utilise.
+                        L'utilisateur peut a tout moment supprimer son compte et cesser d'utiliser le Service. Barbote SAS se reserve le droit de suspendre ou de supprimer un compte en cas de violation des presentes CGU, sans preavis ni indemnite.
                     </p>
                 </section>
 
                 <section className={css({ display: "flex", flexDirection: "column", gap: "0.75rem" })}>
                     <h2 className={css({ color: "neutral", fontSize: "1.25rem", fontWeight: "400" })}>
-                        Limitation de responsabilite
+                        9. Modification des CGU
                     </h2>
                     <p className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.6" })}>
-                        Les informations presentees sur OpenRegistre sont fournies a titre informatif. Bien que nous nous efforcions de garantir l'exactitude des donnees, nous ne pouvons etre tenus responsables des erreurs ou omissions. Les sources de chaque fait sont systematiquement citees afin de permettre a chacun de verifier les informations.
+                        Barbote SAS se reserve le droit de modifier les presentes CGU a tout moment. Les utilisateurs seront informes des modifications par une notification sur le Service. La poursuite de l'utilisation du Service apres modification vaut acceptation des nouvelles CGU.
+                    </p>
+                </section>
+
+                <section className={css({ display: "flex", flexDirection: "column", gap: "0.75rem" })}>
+                    <h2 className={css({ color: "neutral", fontSize: "1.25rem", fontWeight: "400" })}>
+                        10. Droit applicable
+                    </h2>
+                    <p className={css({ color: "neutral/75", fontSize: "0.9375rem", lineHeight: "1.6" })}>
+                        Les presentes CGU sont soumises au droit francais. En cas de litige, et apres tentative de resolution amiable, les tribunaux de Paris seront seuls competents.
                     </p>
                 </section>
 

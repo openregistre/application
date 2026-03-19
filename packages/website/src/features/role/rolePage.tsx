@@ -9,7 +9,7 @@ import { useDataFromAPI } from "../../utilities/useDataFromAPI"
 
 
 export function RolePage() {
-    const { id } = useParams({ from: "/bibliotheque/role/$id" })
+    const { id } = useParams({ from: "/collection/fonction/$id" })
 
     const { data, isLoading } = useDataFromAPI({
         routeDefinition: readRoleRouteDefinition,
@@ -229,7 +229,7 @@ function PersonRow(props: {
 
     return (
         <Link
-            to="/bibliotheque/personne/$id"
+            to="/collection/personne/$id"
             params={{ id: person.id }}
             className={css({
                 width: "100%",

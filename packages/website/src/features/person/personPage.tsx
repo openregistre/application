@@ -6,8 +6,8 @@ import type * as v from "valibot"
 import { css } from "../../../styled-system/css/css"
 import { cx } from "../../../styled-system/css/cx"
 import { Button } from "../../components/button/button"
-import { Chip } from "../../components/data/chip"
 import { CircularLoader } from "../../components/circularLoader"
+import { Chip } from "../../components/data/chip"
 import { ActionBar } from "../../components/layouts/actionBar"
 import { Separator } from "../../components/layouts/separator"
 import { useDataFromAPI } from "../../utilities/useDataFromAPI"
@@ -23,7 +23,7 @@ const factViews: Array<{ key: FactView; label: string }> = [
 ]
 
 export function PersonPage() {
-    const { id } = useParams({ from: "/bibliotheque/personne/$id" })
+    const { id } = useParams({ from: "/collection/personne/$id" })
     const [factView, setFactView] = useState<FactView>("chronologique")
 
     const { data, isLoading } = useDataFromAPI({
@@ -194,7 +194,7 @@ export function PersonPage() {
                                 })}
                             >
                                 {currentRoles.map((role) => (
-                                    <Link key={role.id} to="/bibliotheque/role/$id" params={{ id: role.id }}>
+                                    <Link key={role.id} to="/collection/fonction/$id" params={{ id: role.id }}>
                                         <Chip text={role.label} color="information" className={{ cursor: "pointer", _hover: { opacity: "0.8" } }} />
                                     </Link>
                                 ))}
@@ -213,7 +213,7 @@ export function PersonPage() {
                                 })}
                             >
                                 {currentParties.map((party) => (
-                                    <Link key={party.id} to="/bibliotheque/parti/$id" params={{ id: party.id }}>
+                                    <Link key={party.id} to="/collection/parti/$id" params={{ id: party.id }}>
                                         <Chip text={party.abbreviation || party.name} color="default" className={{ cursor: "pointer", _hover: { opacity: "0.8" } }} />
                                     </Link>
                                 ))}
@@ -310,7 +310,7 @@ export function PersonPage() {
                                     })}
                                 >
                                     <Link
-                                        to="/bibliotheque/role/$id"
+                                        to="/collection/fonction/$id"
                                         params={{ id: role.id }}
                                         className={css({
                                             fontSize: "0.875rem",
@@ -375,7 +375,7 @@ export function PersonPage() {
                                         />
                                     )}
                                     <Link
-                                        to="/bibliotheque/parti/$id"
+                                        to="/collection/parti/$id"
                                         params={{ id: party.id }}
                                         className={css({
                                             fontSize: "0.875rem",

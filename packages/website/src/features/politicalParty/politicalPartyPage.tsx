@@ -9,7 +9,7 @@ import { useDataFromAPI } from "../../utilities/useDataFromAPI"
 
 
 export function PoliticalPartyPage() {
-    const { id } = useParams({ from: "/bibliotheque/parti/$id" })
+    const { id } = useParams({ from: "/collection/parti/$id" })
 
     const { data, isLoading } = useDataFromAPI({
         routeDefinition: readPoliticalPartyRouteDefinition,
@@ -282,7 +282,7 @@ function PersonRow(props: {
 
     return (
         <Link
-            to="/bibliotheque/personne/$id"
+            to="/collection/personne/$id"
             params={{ id: person.id }}
             className={css({
                 width: "100%",

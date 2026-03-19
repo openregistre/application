@@ -1,125 +1,207 @@
-import { Link, Outlet } from "@tanstack/react-router"
+import { IconInfoCircle, IconSearch } from "@tabler/icons-react"
+import { Outlet } from "@tanstack/react-router"
 import { css } from "../../styled-system/css/css"
+import { Button } from "../components/button/button.tsx"
+import { ButtonGhostContent } from "../components/button/buttonGhostContent.tsx"
+import { ButtonOutlineContent } from "../components/button/buttonOutlineContent.tsx"
+import { LinkButton } from "../components/button/linkButton.tsx"
+import { LogoIcon } from "../components/layouts/logoIcon.tsx"
+import { LogoText } from "../components/layouts/logoText.tsx"
+import { Popover } from "../components/layouts/popover.tsx"
+import { Separator } from "../components/layouts/separator.tsx"
+
+
+const popoverLinkStyle = {
+    width: "100%",
+    justifyContent: "start",
+}
 
 export function RootLayout() {
     return (
         <div
             className={css({
                 position: "relative",
-                minHeight: "100dvh",
+                height: "100dvh",
                 width: "100%",
                 maxWidth: "100%",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "start",
                 alignItems: "start",
-                overflowX: "hidden",
-                overflowY: "auto",
+                backgroundColor: "background",
             })}
         >
-            <div className={css({ flex: "1", width: "100%", display: "flex", flexDirection: "column" })}>
-                <Outlet />
-            </div>
-
-            {/* Footer */}
-            <footer
+            {/* Top navigation bar */}
+            <nav
                 className={css({
+                    position: "sticky",
+                    top: 0,
+                    zIndex: 10,
                     width: "100%",
-                    borderTopWidth: "1px",
-                    borderTopColor: "neutral/10",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
                     backgroundColor: "white",
+                    borderBottomWidth: "1px",
+                    borderBottomStyle: "solid",
+                    borderBottomColor: "neutral/10",
+                    padding: "1rem",
                 })}
             >
                 <div
                     className={css({
                         width: "100%",
                         maxWidth: "64rem",
-                        marginX: "auto",
-                        paddingX: "1.5rem",
-                        paddingY: "1.5rem",
                         display: "flex",
-                        flexDirection: "row",
                         justifyContent: "space-between",
                         alignItems: "center",
-                        flexWrap: "wrap",
-                        gap: "1rem",
                     })}
                 >
-                    <span className={css({ color: "neutral/25", fontSize: "0.8125rem" })}>
-                        OpenRegistre
-                    </span>
-                    <nav
+                    {/* Left — Logo */}
+                    <LinkButton to="/">
+                        <div
+                            className={css({
+                                display: "flex",
+                                justifyContent: "start",
+                                alignItems: "center",
+                                gap: "0.25rem",
+                                padding: "0.25rem",
+                            })}
+                        >
+                            <LogoIcon />
+                            <LogoText />
+                        </div>
+                    </LinkButton>
+
+                    {/* Right — Popover triggers */}
+                    <div
                         className={css({
                             display: "flex",
-                            flexDirection: "row",
                             alignItems: "center",
-                            gap: "1.5rem",
-                            flexWrap: "wrap",
+                            gap: "0.25rem",
                         })}
                     >
-                        <Link
-                            to="/bibliotheque/derniers-ajouts"
-                            className={css({
-                                color: "neutral/40",
-                                fontSize: "0.8125rem",
-                                _hover: { color: "primary" },
-                                transition: "color",
-                                transitionDuration: "150ms",
-                            })}
+                        {/* Collection popover */}
+                        <Popover
+                            position="bottom"
+                            align="end"
+                            triggerElement={
+                                <Button>
+                                    <ButtonOutlineContent
+                                        leftIcon={<IconSearch />}
+                                    />
+                                </Button>
+                            }
                         >
-                            Derniers ajouts
-                        </Link>
-                        <Link
-                            to="/philosophie"
-                            className={css({
-                                color: "neutral/40",
-                                fontSize: "0.8125rem",
-                                _hover: { color: "primary" },
-                                transition: "color",
-                                transitionDuration: "150ms",
-                            })}
+                            {({ setIsOpen }) => (
+                                <div
+                                    className={css({
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        padding: "0.25rem",
+                                        gap: "0.125rem",
+                                        minWidth: "12rem",
+                                    })}
+                                >
+                                    <LinkButton
+                                        to="/collection/recherche"
+                                        className={popoverLinkStyle}
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        <ButtonGhostContent
+                                            text="Recherche"
+                                            className={popoverLinkStyle}
+                                        />
+                                    </LinkButton>
+                                    <LinkButton
+                                        to="/collection/derniers-ajouts"
+                                        className={popoverLinkStyle}
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        <ButtonGhostContent
+                                            text="Derniers ajouts"
+                                            className={popoverLinkStyle}
+                                        />
+                                    </LinkButton>
+                                </div>
+                            )}
+                        </Popover>
+
+                        <Separator direction="vertical" className={{ height: "1.5rem" }} />
+
+                        {/* Legal / info popover */}
+                        <Popover
+                            position="bottom"
+                            align="end"
+                            triggerElement={
+                                <Button>
+                                    <ButtonOutlineContent
+                                        leftIcon={<IconInfoCircle />}
+                                    />
+                                </Button>
+                            }
                         >
-                            Philosophie
-                        </Link>
-                        <Link
-                            to="/mentions-legales"
-                            className={css({
-                                color: "neutral/40",
-                                fontSize: "0.8125rem",
-                                _hover: { color: "primary" },
-                                transition: "color",
-                                transitionDuration: "150ms",
-                            })}
-                        >
-                            Mentions légales
-                        </Link>
-                        <Link
-                            to="/cgu"
-                            className={css({
-                                color: "neutral/40",
-                                fontSize: "0.8125rem",
-                                _hover: { color: "primary" },
-                                transition: "color",
-                                transitionDuration: "150ms",
-                            })}
-                        >
-                            CGU
-                        </Link>
-                        <Link
-                            to="/confidentialite"
-                            className={css({
-                                color: "neutral/40",
-                                fontSize: "0.8125rem",
-                                _hover: { color: "primary" },
-                                transition: "color",
-                                transitionDuration: "150ms",
-                            })}
-                        >
-                            Confidentialité
-                        </Link>
-                    </nav>
+                            {({ setIsOpen }) => (
+                                <div
+                                    className={css({
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        padding: "0.25rem",
+                                        gap: "0.125rem",
+                                        minWidth: "12rem",
+                                    })}
+                                >
+                                    <LinkButton
+                                        to="/philosophie"
+                                        className={popoverLinkStyle}
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        <ButtonGhostContent
+                                            text="Philosophie"
+                                            className={popoverLinkStyle}
+                                        />
+                                    </LinkButton>
+                                    <LinkButton
+                                        to="/mentions-légales"
+                                        className={popoverLinkStyle}
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        <ButtonGhostContent
+                                            text="Mentions légales"
+                                            className={popoverLinkStyle}
+                                        />
+                                    </LinkButton>
+                                    <LinkButton
+                                        to="/confidentialité"
+                                        className={popoverLinkStyle}
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        <ButtonGhostContent
+                                            text="Confidentialité"
+                                            className={popoverLinkStyle}
+                                        />
+                                    </LinkButton>
+                                </div>
+                            )}
+                        </Popover>
+                    </div>
                 </div>
-            </footer>
+            </nav>
+
+            {/* Page content — offset for fixed nav height */}
+            <div
+                className={css({
+                    width: "100%",
+                    flex: "1",
+                    display: "flex",
+                    flexDirection: "column",
+                    overflowX: "hidden",
+                    overflowY: "auto",
+                    padding: "1rem",
+                })}
+            >
+                <Outlet />
+            </div>
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router"
 import type { ComponentProps, MouseEventHandler, ReactNode } from "react"
 import { css } from "../../../styled-system/css/css.js"
-import { cx } from "../../../styled-system/css/cx.js"
+import type { SystemStyleObject } from "../../../styled-system/types"
 import type { ValidParams, ValidRoutes } from "../../routes/applicationRouter.js"
 
 /**
@@ -20,7 +20,7 @@ export function LinkButton(props: {
     rel?: ComponentProps<typeof Link>["rel"]
     title?: string
     disabled?: boolean
-    className?: string
+    className?: SystemStyleObject
     onClick?: MouseEventHandler<HTMLAnchorElement> | undefined
     children: ReactNode
 }) {
@@ -30,15 +30,12 @@ export function LinkButton(props: {
             params={props.params}
             target={props.target}
             rel={props.rel}
-            className={cx(
-                css({
-                    // display: "flex",
-                    // justifyContent: "flex-start",
-                    // alignItems: "center",
+            className={css(
+                {
                     width: "fit-content",
                     maxWidth: "100%",
                     _disabled: { cursor: "not-allowed", pointerEvents: "none" },
-                }),
+                },
                 props.className,
             )}
             aria-disabled={props.disabled}

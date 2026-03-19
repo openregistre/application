@@ -1,10 +1,10 @@
 import { createRoute } from "@tanstack/react-router"
-import { PoliticalPartyPage } from "../../../features/politicalParty/politicalPartyPage"
-import { bibliothequeLayoutRoute } from "../bibliotheque/bibliothequeLayoutRoute"
+import { PoliticalPartyPage } from "../../../../features/politicalParty/politicalPartyPage"
+import { collectionLayoutRoute } from "../collectionLayoutRoute"
 
 
 export const politicalPartyRoute = createRoute({
-    getParentRoute: () => bibliothequeLayoutRoute,
+    getParentRoute: () => collectionLayoutRoute,
     path: "/parti/$id",
     beforeLoad: () => ({
         title: "Parti politique",

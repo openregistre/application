@@ -2,6 +2,7 @@ import type { Icon, IconProps } from "@tabler/icons-react"
 import { cloneElement, type ReactElement } from "react"
 import { css } from "../../../styled-system/css/css"
 import { cx } from "../../../styled-system/css/cx"
+import type { SystemStyleObject } from "../../../styled-system/types"
 import { CircularLoader } from "../circularLoader"
 import { useButtonLoading } from "./button"
 
@@ -16,7 +17,7 @@ export type ButtonContentProps = {
     isLoading?: boolean
     isDisabled?: boolean
     isCurrent?: boolean
-    className?: string
+    className?: SystemStyleObject
 }
 
 export function renderButtonContent(
@@ -44,7 +45,7 @@ export function renderButtonContent(
             title={props.title ?? props.text}
             aria-current={props.isCurrent}
             aria-disabled={isDisabled}
-            className={cx(classes.container, iconOnlyStyles, props.className)}
+            className={cx(classes.container, iconOnlyStyles, css({ width: "fit-content" }, props.className))}
         >
             {isLoading ? (
                 <CircularLoader size={16} className={classes.leftIcon} />

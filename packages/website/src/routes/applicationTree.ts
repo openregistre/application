@@ -1,23 +1,23 @@
 import type { AnyRoute } from "@tanstack/react-router"
 import { catchRoute } from "./catchRoute.js"
-import { bibliothequeLayoutRoute } from "./root/bibliotheque/bibliothequeLayoutRoute.js"
+import { collectionLayoutRoute } from "./root/collection/collectionLayoutRoute.js"
+import { lastAddedRoute } from "./root/collection/lastAddedRoute.js"
+import { personRoute } from "./root/collection/person/personRoute.js"
+import { politicalPartyRoute } from "./root/collection/politicalParty/politicalPartyRoute.js"
+import { roleRoute } from "./root/collection/role/roleRoute.js"
+import { searchRoute } from "./root/collection/searchRoute.js"
 import { homeLayoutRoute } from "./root/home/homeLayoutRoute.js"
 import { homeRootRoute } from "./root/home/homeRootRoute.js"
-import { lastAddedRoute } from "./root/lastAdded/lastAddedRoute.js"
-import { cguRoute } from "./root/legal/cguRoute.js"
-import { confidentialiteRoute } from "./root/legal/confidentialiteRoute.js"
-import { mentionsLegalesRoute } from "./root/legal/mentionsLegalesRoute.js"
-import { philosophieRoute } from "./root/legal/philosophieRoute.js"
-import { personRoute } from "./root/person/personRoute.js"
-import { politicalPartyRoute } from "./root/politicalParty/politicalPartyRoute.js"
-import { roleRoute } from "./root/role/roleRoute.js"
-import { searchRoute } from "./root/search/searchRoute.js"
+import { legalRoute } from "./root/legalRoute.js"
+import { philosophyRoute } from "./root/philosophyRoute.js"
+import { privacyRoute } from "./root/privacyRoute.js"
+import { termsRoute } from "./root/termsRoute.js"
 import { rootLayoutRoute } from "./rootLayoutRoute.js"
 
 export const applicationTree: AnyRoute = rootLayoutRoute.addChildren([
     homeLayoutRoute.addChildren([homeRootRoute]),
 
-    bibliothequeLayoutRoute.addChildren([
+    collectionLayoutRoute.addChildren([
         searchRoute,
         personRoute,
         roleRoute,
@@ -25,10 +25,10 @@ export const applicationTree: AnyRoute = rootLayoutRoute.addChildren([
         lastAddedRoute,
     ]),
 
-    philosophieRoute,
-    mentionsLegalesRoute,
-    cguRoute,
-    confidentialiteRoute,
+    philosophyRoute,
+    legalRoute,
+    termsRoute,
+    privacyRoute,
 
     catchRoute,
 ])

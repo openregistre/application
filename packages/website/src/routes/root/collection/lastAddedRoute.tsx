@@ -1,10 +1,10 @@
 import { createRoute } from "@tanstack/react-router"
 import { LastAddedPage } from "../../../features/lastAdded/lastAddedPage"
-import { bibliothequeLayoutRoute } from "../bibliotheque/bibliothequeLayoutRoute"
+import { collectionLayoutRoute } from "./collectionLayoutRoute"
 
 
 export const lastAddedRoute = createRoute({
-    getParentRoute: () => bibliothequeLayoutRoute,
+    getParentRoute: () => collectionLayoutRoute,
     path: "/derniers-ajouts",
     beforeLoad: () => ({
         title: "Derniers ajouts",

@@ -1,9 +1,7 @@
-import { Link } from "@tanstack/react-router"
 import { css } from "../../../styled-system/css/css"
-import { Logo } from "../../components/layouts/logo"
 
 
-export function ConfidentialitePage() {
+export function PrivacyPage() {
     return (
         <div
             className={css({
@@ -16,47 +14,6 @@ export function ConfidentialitePage() {
                 backgroundColor: "background",
             })}
         >
-            {/* Top bar */}
-            <div
-                className={css({
-                    width: "100%",
-                    borderBottomWidth: "1px",
-                    borderBottomColor: "neutral/10",
-                    backgroundColor: "white",
-                })}
-            >
-                <div
-                    className={css({
-                        width: "100%",
-                        maxWidth: "64rem",
-                        marginX: "auto",
-                        paddingX: "1.5rem",
-                        paddingY: "1rem",
-                    })}
-                >
-                    <Link
-                        to="/"
-                        className={css({
-                            display: "flex",
-                            justifyContent: "start",
-                            alignItems: "center",
-                        })}
-                    >
-                        <Logo />
-                        <span
-                            className={css({
-                                color: "primary",
-                                fontSize: "1rem",
-                                fontWeight: "400",
-                                letterSpacing: "-0.02em",
-                            })}
-                        >
-                            OpenRegistre
-                        </span>
-                    </Link>
-                </div>
-            </div>
-
             {/* Content */}
             <div
                 className={css({
