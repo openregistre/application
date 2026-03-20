@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_PREFIX: ghcr.io/boilerplate
+  IMAGE_PREFIX: ghcr.io/openregistre
 
 jobs:
   build-and-push:
@@ -59,7 +59,7 @@ jobs:
           IMAGES=("api" "website")
 
           for img in "${IMAGES[@]}"; do
-            SRC="boilerplate-${img}:${VERSION}"
+            SRC="openregistre-${img}:${VERSION}"
             DEST="${IMAGE_PREFIX}/${img}"
 
             docker tag "${SRC}" "${DEST}:${VERSION}"

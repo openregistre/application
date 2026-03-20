@@ -68,11 +68,7 @@ export function RolePage() {
     return (
         <>
             <ActionBar
-                share={{
-                    title: data.label,
-                    description: `${data.persons.length} personne${data.persons.length > 1 ? "s" : ""} | Role sur OpenRegistre`,
-                    hashtags: ["OpenRegistre", "Politique"],
-                }}
+                share
             />
 
             {/* Content */}

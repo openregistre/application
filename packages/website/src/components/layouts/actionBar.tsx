@@ -7,12 +7,8 @@ import { ShareButton } from "../share/shareButton"
 
 
 export function ActionBar(props: {
-    /** Share button props — omit to hide the share button */
-    share?: {
-        title: string
-        description?: string
-        hashtags?: Array<string>
-    }
+    /** Whether to show the share (copy link) button */
+    share?: boolean
 }) {
     const router = useRouter()
 
@@ -51,11 +47,7 @@ export function ActionBar(props: {
                 </Button>
 
                 {props.share && (
-                    <ShareButton
-                        title={props.share.title}
-                        description={props.share.description}
-                        hashtags={props.share.hashtags}
-                    />
+                    <ShareButton />
                 )}
             </div>
         </div>

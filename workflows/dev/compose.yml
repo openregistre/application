@@ -59,8 +59,6 @@ services:
       WEBSITE_BASE_URL: http://localhost:19003
       # Database
       SQL_DATABASE_URL: *pg-url
-      # Admin
-      ADMIN_API_KEY: openregistre-dev-admin-api-key
       # Tools (used by migrate/seed scripts)
       NODE_ENV: development
     ports:

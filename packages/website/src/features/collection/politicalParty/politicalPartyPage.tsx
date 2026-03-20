@@ -68,11 +68,7 @@ export function PoliticalPartyPage() {
     return (
         <>
             <ActionBar
-                share={{
-                    title: data.abbreviation ? `${data.name} (${data.abbreviation})` : data.name,
-                    description: `${data.persons.length} membre${data.persons.length > 1 ? "s" : ""} | Parti politique sur OpenRegistre`,
-                    hashtags: ["OpenRegistre", "Politique"],
-                }}
+                share
             />
 
             {/* Content */}

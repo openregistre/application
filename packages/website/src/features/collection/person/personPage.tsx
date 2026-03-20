@@ -7,7 +7,6 @@ import { Chip } from "../../../components/data/chip"
 import { ActionBar } from "../../../components/layouts/actionBar"
 import { Separator } from "../../../components/layouts/separator"
 import { useDataFromAPI } from "../../../utilities/useDataFromAPI"
-import { buildPersonShareDescription } from "./buildPersonShareDescription.ts"
 import { FactList } from "./factList.tsx"
 
 
@@ -75,11 +74,7 @@ export function PersonPage() {
     return (
         <>
             <ActionBar
-                share={{
-                    title: data.fullName,
-                    description: buildPersonShareDescription(data),
-                    hashtags: ["OpenRegistre", "Politique"],
-                }}
+                share
             />
 
             {/* Content */}
