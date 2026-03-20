@@ -6,7 +6,6 @@ build
 .npmrc
 .old
 
-pnpm-lock.yaml
 .pnpm-store
 
 *.tsbuildinfo
