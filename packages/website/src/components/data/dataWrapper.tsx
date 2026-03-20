@@ -1,7 +1,7 @@
 import type { routeDefinition } from "@openregistre/metadata/utilities"
 import { Fragment, useMemo, type ComponentProps, type ReactElement } from "react"
 import * as v from "valibot"
-import { css, cx } from "../../../styled-system/css"
+import { css } from "../../../styled-system/css"
 import { useDataFromAPI } from "../../utilities/useDataFromAPI"
 import { CircularLoader } from "../circularLoader"
 import { FormatError } from "./formatError"
@@ -34,8 +34,8 @@ export function DataWrapper<
                 <CircularLoader
                     {...props.loaderProps}
                     text={props.loaderProps?.text}
-                    className={cx(
-                        css({}),
+                    className={css.raw(
+                        {},
                         props.loaderProps?.className,
                     )}
                 />

@@ -1,10 +1,11 @@
 {
     "name": "@openregistre/metadata",
+    "version": "0.1.0",
     "type": "module",
-    "private": true,
     "scripts": {
         "build": "tsc --build",
-        "typecheck": "tsc --noEmit"
+        "typecheck": "tsc --noEmit",
+        "prepack": "tsc --build"
     },
     "devDependencies": {
         "@types/node": "25.5.0",
@@ -16,18 +17,28 @@
         "postgres": "3.4.8",
         "valibot": "1.2.0"
     },
+    "files": [
+        "build"
+    ],
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com"
+    },
     "exports": {
         "./orm": {
-            "default": "./src/orm/index.ts"
+            "types": "./build/orm/index.d.ts",
+            "default": "./build/orm/index.js"
         },
         "./routes": {
-            "default": "./src/routes/index.ts"
+            "types": "./build/routes/index.d.ts",
+            "default": "./build/routes/index.js"
         },
         "./schemas": {
-            "default": "./src/schemas/index.ts"
+            "types": "./build/schemas/index.d.ts",
+            "default": "./build/schemas/index.js"
         },
         "./utilities": {
-            "default": "./src/utilities/index.ts"
+            "types": "./build/utilities/index.d.ts",
+            "default": "./build/utilities/index.js"
         }
     }
 }
