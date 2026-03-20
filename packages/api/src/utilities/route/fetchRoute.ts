@@ -12,7 +12,7 @@ export function fetchRoute(parameters: {
 }): ReturnType<typeof routeResponse> | Promise<ReturnType<typeof routeResponse>> {
     const route = parameters.routes.find(
         (route) => {
-            const isRightMethod = route.definition.methods.some((method) => method === parameters.context.request.method)
+            const isRightMethod = route.definition.methods.some((method: string) => method === parameters.context.request.method)
             const isRightUrl = matchPath(route.definition.path, parameters.context.request.url.pathname)
             return isRightMethod && isRightUrl
         }

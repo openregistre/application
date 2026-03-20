@@ -8,34 +8,75 @@ export function Popover(props: {
     triggerElement: ReactElement<ButtonHTMLAttributes<HTMLButtonElement> & RefAttributes<HTMLButtonElement>>
     children: ((context: { isOpen: boolean, setIsOpen: Dispatch<SetStateAction<boolean>> }) => ReactNode)
     position: "top" | "bottom" | "left" | "right"
+    align?: "start" | "center" | "end"
     className?: Styles
 }) {
     const [isOpen, setIsOpen] = useState(false)
     const [coords, setCoords] = useState({ top: 0, left: 0, })
     const popoverRef = useRef<HTMLDivElement>(null)
     const triggerRef = useRef<HTMLButtonElement>(null)
+    const align = props.align ?? "start"
 
     useEffect(() => {
         if (triggerRef.current === null) { return }
         if (popoverRef.current === null) { return }
         const rect = triggerRef.current.getBoundingClientRect()
+        const popoverWidth = popoverRef.current.offsetWidth
+        const popoverHeight = popoverRef.current.offsetHeight
+
+        function alignHorizontal(): number {
+            switch (align) {
+                case "center":
+                    return rect.left + window.scrollX + (rect.width / 2) - (popoverWidth / 2)
+                case "end":
+                    return rect.right + window.scrollX - popoverWidth
+                case "start":
+                default:
+                    return rect.left + window.scrollX
+            }
+        }
+
+        function alignVertical(): number {
+            switch (align) {
+                case "center":
+                    return rect.top + window.scrollY + (rect.height / 2) - (popoverHeight / 2)
+                case "end":
+                    return rect.bottom + window.scrollY - popoverHeight
+                case "start":
+                default:
+                    return rect.top + window.scrollY
+            }
+        }
+
         switch (props.position) {
             case "bottom":
                 setCoords({
                     top: rect.bottom + window.scrollY,
-                    left: rect.left + window.scrollX,
+                    left: alignHorizontal(),
                 })
                 break
             case "top":
                 setCoords({
-                    top: rect.top + window.scrollY - popoverRef.current?.offsetHeight,
-                    left: rect.left + window.scrollX,
+                    top: rect.top + window.scrollY - popoverHeight,
+                    left: alignHorizontal(),
+                })
+                break
+            case "right":
+                setCoords({
+                    top: alignVertical(),
+                    left: rect.right + window.scrollX,
+                })
+                break
+            case "left":
+                setCoords({
+                    top: alignVertical(),
+                    left: rect.left + window.scrollX - popoverWidth,
                 })
                 break
             default:
                 break
         }
-    }, [triggerRef, popoverRef, isOpen])
+    }, [triggerRef, popoverRef, isOpen, align])
 
     useEffect(() => {
         function handleClickOutside(e: MouseEvent) {

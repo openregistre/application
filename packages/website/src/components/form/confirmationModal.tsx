@@ -158,7 +158,7 @@ export function ConfirmationModal<
                                         className={css({})}
                                     >
                                         <ButtonOutlineContent
-                                            className={css({})}
+                                            className={{}}
                                             text={"Cancel"}
                                         />
                                     </button>
@@ -183,7 +183,7 @@ export function ConfirmationModal<
                                     >
                                         <ButtonPlainContent
                                             {...props.submitButtonProps}
-                                            className={css({})}
+                                            className={{}}
                                             isLoading={isConfirming}
                                         />
                                     </button>

@@ -1,7 +1,6 @@
 import type { Icon, IconProps } from "@tabler/icons-react"
 import { cloneElement, type ReactElement } from "react"
-import { css } from "../../../styled-system/css/css"
-import { cx } from "../../../styled-system/css/cx"
+import { css, type Styles } from "../../../styled-system/css/css"
 import { CircularLoader } from "../circularLoader"
 import { useButtonLoading } from "./button"
 
@@ -16,12 +15,12 @@ export type ButtonContentProps = {
     isLoading?: boolean
     isDisabled?: boolean
     isCurrent?: boolean
-    className?: string
+    className?: Styles
 }
 
 export function renderButtonContent(
     props: ButtonContentProps,
-    classes: Partial<Record<"container" | "leftIcon" | "text" | "rightIcon", string>>,
+    classes: Partial<Record<"container" | "leftIcon" | "text" | "rightIcon", Styles>>,
 ) {
     const contextLoading = useButtonLoading()
     const isLoading = props.isLoading ?? contextLoading
@@ -29,11 +28,11 @@ export function renderButtonContent(
 
     const iconOnlyStyles =
         props.text === undefined
-            ? css({
+            ? {
                 width: "auto",
                 justifyContent: "center",
-            })
-            : ""
+            }
+            : undefined
 
     // const activeContainerStyles = props.isActive ? css({ backgroundColor: "neutral/5" }) : ""
     // const activeLeftIconStyles = props.isActive ? css({ color: "primary" }) : ""
@@ -44,7 +43,7 @@ export function renderButtonContent(
             title={props.title ?? props.text}
             aria-current={props.isCurrent}
             aria-disabled={isDisabled}
-            className={cx(classes.container, iconOnlyStyles, props.className)}
+            className={css(classes.container, iconOnlyStyles, props.className)}
         >
             {isLoading ? (
                 <CircularLoader size={16} className={classes.leftIcon} />
@@ -54,13 +53,13 @@ export function renderButtonContent(
                     "aria-disabled": isDisabled,
                     "aria-current": props.isCurrent,
                     size: 16,
-                    className: cx(classes.leftIcon),
+                    className: css(classes.leftIcon),
                     strokeWidth: 1.75,
                 })
             )}
 
             {props.text && (
-                <span aria-disabled={isDisabled} aria-current={props.isCurrent} className={cx(classes.text)}>
+                <span aria-disabled={isDisabled} aria-current={props.isCurrent} className={css(classes.text)}>
                     {props.text}
                 </span>
             )}
@@ -73,7 +72,7 @@ export function renderButtonContent(
                         cloneElement(props.rightIcon, {
                             "aria-disabled": isDisabled,
                             size: 16 - 4,
-                            className: cx(classes.rightIcon, css({ _disabled: { color: "neutral/50" } })),
+                            className: css(classes.rightIcon, { _disabled: { color: "neutral/50" } }),
                             strokeWidth: 1.75,
                         })
                     )}

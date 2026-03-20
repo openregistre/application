@@ -1,4 +1,4 @@
-import { sva } from "../../../styled-system/css/sva"
+import { sva } from "../../../styled-system/css"
 import { type ButtonContentProps, renderButtonContent } from "./buttonContent"
 
 const ghostRecipe = sva({
@@ -15,7 +15,7 @@ const ghostRecipe = sva({
             boxSizing: "border-box",
             cursor: "pointer",
             transition: "all",
-            transitionDuration: "200ms",
+            transitionDuration: "100ms",
             transitionTimingFunction: "ease-in-out",
             borderWidth: "1px",
             borderStyle: "solid",
@@ -87,6 +87,5 @@ const ghostRecipe = sva({
 })
 
 export function ButtonGhostContent(props: ButtonContentProps) {
-    const classes = ghostRecipe({ color: props.color ?? "neutral" })
-    return renderButtonContent(props, classes)
+    return renderButtonContent(props, ghostRecipe.raw({ color: props.color ?? "neutral" }))
 }

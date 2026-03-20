@@ -1,9 +1,9 @@
 import * as v from 'valibot'
-import { booleanSchema } from '../components/schemas/booleanSchema'
-import { idSchema } from '../components/schemas/idSchema'
-import { stringSchema } from '../components/schemas/stringSchema'
-import { timestampSchema } from '../components/schemas/timestampSchema'
-import type { factModel } from '../orm/models/fact.model'
+import { booleanSchema } from '../components/schemas/booleanSchema.js'
+import { idSchema } from '../components/schemas/idSchema.js'
+import { stringSchema } from '../components/schemas/stringSchema.js'
+import { timestampSchema } from '../components/schemas/timestampSchema.js'
+import type { factModel } from '../orm/models/fact.model.js'
 
 
 export const factSchema = v.object({
@@ -28,11 +28,6 @@ export const factSchema = v.object({
         ),
 
     "occurredAt":
-        v.nullable(
-            stringSchema
-        ),
-
-    "category":
         v.nullable(
             stringSchema
         ),

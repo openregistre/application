@@ -1,9 +1,9 @@
 import * as v from 'valibot'
-import { booleanSchema } from '../components/schemas/booleanSchema'
-import { idSchema } from '../components/schemas/idSchema'
-import { stringSchema } from '../components/schemas/stringSchema'
-import { timestampSchema } from '../components/schemas/timestampSchema'
-import { userSessionModel } from '../orm/models/userSession.model'
+import { booleanSchema } from '../components/schemas/booleanSchema.js'
+import { idSchema } from '../components/schemas/idSchema.js'
+import { stringSchema } from '../components/schemas/stringSchema.js'
+import { timestampSchema } from '../components/schemas/timestampSchema.js'
+import { userSessionModel } from '../orm/models/userSession.model.js'
 
 
 export const userSessionSchema = v.object({

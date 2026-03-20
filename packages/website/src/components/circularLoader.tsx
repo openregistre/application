@@ -1,18 +1,17 @@
 import { IconLoader2 } from "@tabler/icons-react";
-import { css } from "../../styled-system/css/css";
-import { cx } from "../../styled-system/css/cx";
+import { css, type Styles } from "../../styled-system/css/css";
 
-export function CircularLoader(props: { text?: string; className?: string; size?: number }) {
+export function CircularLoader(props: { text?: string; className?: Styles; size?: number }) {
     return (
         <div
-            className={cx(
-                css({
+            className={css(
+                {
                     display: "flex",
                     justifyContent: "flex-start",
                     alignItems: "center",
                     gap: "0.5rem",
                     stroke: "neutral/50",
-                }),
+                },
                 props.className,
             )}
         >

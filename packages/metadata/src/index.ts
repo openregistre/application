@@ -1,5 +1,5 @@
-export * from "./orm/index"
-export * from "./routes/index"
-export * from "./schemas/index"
-export * from "./utilities/index"
+export * from "./orm/index.js"
+export * from "./routes/index.js"
+export * from "./schemas/index.js"
+export * from "./utilities/index.js"
 

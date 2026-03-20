@@ -28,19 +28,22 @@ export default defineConfig({
         fonts: {
           body: { value: 'system-ui, sans-serif' }
         }
-      }
+      },
+      keyframes: {
+        fadeIn: {
+          from: { opacity: "0", transform: "translateY(-0.25rem)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+      },
     },
   },
 
   globalFontface: {
-    Monaspace: {
-      src: 'url(/src/assets/fonts/Monaspace Neon Var.woff2) format("woff2")',
-      fontWeight: "unset",
+    Index: {
+      src: 'url(/src/assets/fonts/index-variable.woff2) format("woff2")',
+      fontWeight: "100 900",
       fontStyle: 'normal',
       fontDisplay: 'swap',
-      fontVariant: "contextual",
-      lineGapOverride: "normal",
-      fontFeatureSettings: "calt",
     }
   },
 
@@ -49,7 +52,7 @@ export default defineConfig({
       color: "neutral",
       margin: 0,
       padding: 0,
-      fontFamily: "Monaspace, monospace",
+      fontFamily: "Index, sans-serif",
       fontWeight: "300",
     }
   },

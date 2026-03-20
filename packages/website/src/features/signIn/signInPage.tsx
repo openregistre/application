@@ -12,7 +12,7 @@ import { FormLabel } from "../../components/form/formLabel.js"
 import { FormRoot } from "../../components/form/formRoot.js"
 import { InputPassword } from "../../components/inputs/inputPassword.js"
 import { InputText } from "../../components/inputs/inputText.js"
-import { Logo } from "../../components/layouts/logo.js"
+import { LogoIcon } from "../../components/layouts/logoIcon.js"
 import { Separator } from "../../components/layouts/separator.js"
 import { toast } from "../../contexts/toasts/useToast.js"
 import { applicationRouter } from "../../routes/applicationRouter.js"
@@ -68,12 +68,12 @@ export function SignInPage() {
                         })}
                     >
                         <LinkButton to="/">
-                            <Logo />
+                            <LogoIcon />
                         </LinkButton>
                         <LinkButton to="/documentation" title="Documentation">
                             <ButtonGhostContent
                                 leftIcon={<IconBook2 />}
-                                className={css({ width: "100%", justifyContent: "center" })}
+                                className={{ width: "100%", justifyContent: "center" }}
                             />
                         </LinkButton>
                     </div>
@@ -110,7 +110,7 @@ export function SignInPage() {
                         submitButtonProps={{
                             leftIcon: <IconLogin2 />,
                             text: "Se connecter",
-                            className: css({ width: "100%", justifyContent: "center" }),
+                            className: { width: "100%", justifyContent: "center" },
                         }}
                         submitOnPressEnterKey={true}
                         onSubmit={async (data) => {
@@ -182,11 +182,11 @@ export function SignInPage() {
                             gap: "0.5rem",
                         })}
                     >
-                        <LinkButton to="/inscription" className={css({ width: "100%" })}>
+                        <LinkButton to="/inscription" className={{ width: "100%" }}>
                             <ButtonOutlineContent
                                 leftIcon={<IconUserPlus />}
                                 text="Créer un compte"
-                                className={css({ width: "100%", justifyContent: "center" })}
+                                className={{ width: "100%", justifyContent: "center" }}
                             />
                         </LinkButton>
                     </div>

@@ -1,8 +1,8 @@
 import { index, pgTable, text } from "drizzle-orm/pg-core"
-import { idColumn } from "../../components/models/idColumn"
-import { timestampColumn } from "../../components/models/timestampColumn"
-import { factModel } from "./fact.model"
-import { publisherModel } from "./publisher.model"
+import { idColumn } from "../../components/models/idColumn.js"
+import { timestampColumn } from "../../components/models/timestampColumn.js"
+import { factModel } from "./fact.model.js"
+import { publisherModel } from "./publisher.model.js"
 
 
 export const sourceModel = pgTable(

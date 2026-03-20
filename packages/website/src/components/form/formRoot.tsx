@@ -79,7 +79,7 @@ export function FormRoot<T extends Record<string, unknown>, U extends v.GenericS
                     </div>
                     <Button
                         ref={submitButtonRef}
-                        className={props.submitButtonProps.className}
+                        className={props.submitButtonProps.className ? css(props.submitButtonProps.className) : undefined}
                         type="button"
                         hasLoader={true}
                         isDisabled={props.submitButtonProps.isDisabled}

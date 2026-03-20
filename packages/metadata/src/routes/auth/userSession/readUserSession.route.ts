@@ -1,6 +1,6 @@
 import * as v from "valibot"
-import { userSchema, userSessionSchema } from "../../../schemas/index"
-import { routeDefinition } from "../../../utilities/index"
+import { userSchema, userSessionSchema } from "../../../schemas/index.js"
+import { routeDefinition } from "../../../utilities/index.js"
 
 
 export const readUserSessionRouteDefinition = routeDefinition({

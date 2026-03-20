@@ -1,9 +1,9 @@
 import * as v from "valibot"
-import { idSchema } from "../../../components/schemas/idSchema"
-import { stringSchema } from "../../../components/schemas/stringSchema"
-import { stringArraySchema } from "../../../components/schemas/stringArraySchema"
-import { booleanSchema } from "../../../components/schemas/booleanSchema"
-import { routeDefinition } from "../../../utilities/index"
+import { idSchema } from "../../../components/schemas/idSchema.js"
+import { stringSchema } from "../../../components/schemas/stringSchema.js"
+import { stringArraySchema } from "../../../components/schemas/stringArraySchema.js"
+import { booleanSchema } from "../../../components/schemas/booleanSchema.js"
+import { routeDefinition } from "../../../utilities/index.js"
 
 
 export const readPersonRouteDefinition = routeDefinition({
@@ -39,7 +39,10 @@ export const readPersonRouteDefinition = routeDefinition({
                 title: v.nonNullable(stringSchema),
                 description: v.nonNullable(stringSchema),
                 occurredAt: v.nullable(stringSchema),
-                category: v.nullable(stringSchema),
+                tags: v.array(v.object({
+                    id: v.nonNullable(idSchema),
+                    label: v.nonNullable(stringSchema),
+                })),
                 sources: v.array(v.object({
                     id: v.nonNullable(idSchema),
                     url: v.nonNullable(stringSchema),

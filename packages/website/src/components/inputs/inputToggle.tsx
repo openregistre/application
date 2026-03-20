@@ -59,13 +59,11 @@ export function InputToggle<TValue extends (string | boolean)>(props:
                             className={css({})}
                         >
                             <ButtonGhostContent
-                                className={css(
-                                    {
-                                        animationDuration: "200ms",
-                                        animationTimingFunction: "ease-in-out",
-                                        backgroundColor: "transparent",
-                                    },
-                                    (isSelected === false)
+                                className={{
+                                    animationDuration: "200ms",
+                                    animationTimingFunction: "ease-in-out",
+                                    backgroundColor: "transparent",
+                                    ...(isSelected === false)
                                         ? undefined
                                         : {
                                             backgroundColor: "white",
@@ -73,8 +71,8 @@ export function InputToggle<TValue extends (string | boolean)>(props:
                                             outlineWidth: "1px",
                                             outlineOffset: "-1px",
                                             outlineColor: "neutral/50",
-                                        }
-                                )}
+                                        },
+                                }}
                                 text={option.label}
                                 leftIcon={option.icon}
                             />

@@ -1,7 +1,7 @@
 import * as v from "valibot"
-import { varcharSchema } from "../../../components/schemas/varcharSchema"
-import { userSchema } from "../../../schemas/index"
-import { routeDefinition } from "../../../utilities/index"
+import { varcharSchema } from "../../../components/schemas/varcharSchema.js"
+import { userSchema } from "../../../schemas/index.js"
+import { routeDefinition } from "../../../utilities/index.js"
 
 
 export const signInRouteDefinition = routeDefinition({

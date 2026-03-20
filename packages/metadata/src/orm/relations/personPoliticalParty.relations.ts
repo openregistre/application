@@ -1,7 +1,7 @@
 import { relations } from "drizzle-orm"
-import { personModel } from "../models/person.model"
-import { personPoliticalPartyModel } from "../models/personPoliticalParty.model"
-import { politicalPartyModel } from "../models/politicalParty.model"
+import { personModel } from "../models/person.model.js"
+import { personPoliticalPartyModel } from "../models/personPoliticalParty.model.js"
+import { politicalPartyModel } from "../models/politicalParty.model.js"
 
 
 export const personPoliticalPartyRelations = relations(personPoliticalPartyModel, ({ one, many }) => ({

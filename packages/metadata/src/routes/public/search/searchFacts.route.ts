@@ -1,8 +1,8 @@
 import * as v from "valibot"
-import { idSchema } from "../../../components/schemas/idSchema"
-import { integerSchema } from "../../../components/schemas/integerSchema"
-import { stringSchema } from "../../../components/schemas/stringSchema"
-import { routeDefinition } from "../../../utilities/index"
+import { idSchema } from "../../../components/schemas/idSchema.js"
+import { integerSchema } from "../../../components/schemas/integerSchema.js"
+import { stringSchema } from "../../../components/schemas/stringSchema.js"
+import { routeDefinition } from "../../../utilities/index.js"
 
 
 export const searchFactsRouteDefinition = routeDefinition({
@@ -19,7 +19,10 @@ export const searchFactsRouteDefinition = routeDefinition({
                 title: v.nonNullable(stringSchema),
                 description: v.nonNullable(stringSchema),
                 occurredAt: v.nullable(stringSchema),
-                category: v.nullable(stringSchema),
+                tags: v.array(v.object({
+                    id: v.nonNullable(idSchema),
+                    label: v.nonNullable(stringSchema),
+                })),
                 person: v.object({
                     id: v.nonNullable(idSchema),
                     fullName: v.nonNullable(stringSchema),

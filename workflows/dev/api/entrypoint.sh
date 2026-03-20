@@ -11,6 +11,9 @@ SCRIPT_DIR="/dev-scripts/api"
 # Install dependencies (bind-mounted from host, so node_modules persists)
 cd /workspace && pnpm install --frozen-lockfile
 
+# Build metadata (required since exports point to compiled output)
+pnpm --filter @openregistre/metadata build
+
 # Run setup tasks
 $SCRIPT_DIR/migrate.sh
 $SCRIPT_DIR/seed.sh
