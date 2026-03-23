@@ -30,8 +30,6 @@ services:
       dockerfile: ./workflows/build/api/Dockerfile
       args:
         VERSION: ${VERSION:-latest}
-    volumes:
-      - ./packages/api/.env:/root/packages/api/.env:ro
     ports:
       - "3000:3000"
     restart: unless-stopped
