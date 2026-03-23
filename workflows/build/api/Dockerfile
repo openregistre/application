@@ -1,7 +1,7 @@
 # ==============================================================================
 # API Production Dockerfile
 # ==============================================================================
-# Multi-stage build: install deps, then run with tsx (no TypeScript compilation)
+# Multi-stage build: install deps, compile TypeScript, then run compiled JS
 # ==============================================================================
 
 FROM node:22-alpine AS base
@@ -16,6 +16,11 @@ COPY . .
 
 RUN CI=true pnpm install --no-frozen-lockfile
 
+# Build stage - compile TypeScript
+FROM install AS build
+WORKDIR /root/packages/api
+RUN pnpm build
+
 # Deploy stage
 FROM base AS deploy
 
@@ -29,15 +34,15 @@ COPY --from=install /root/node_modules ./node_modules
 COPY --from=install /root/package.json ./package.json
 COPY --from=install /root/pnpm-workspace.yaml ./pnpm-workspace.yaml
 
-# Copy API package with its source and resolved dependencies
+# Copy API package with compiled output and resolved dependencies
 COPY --from=install /root/packages/api/node_modules ./packages/api/node_modules
 COPY --from=install /root/packages/api/package.json ./packages/api/package.json
-COPY packages/api/src ./packages/api/src
+COPY --from=build /root/packages/api/build ./packages/api/build
 
-# Copy metadata package source (exported as .ts, resolved at runtime by tsx)
+# Copy metadata package compiled output and resolved dependencies
 COPY --from=install /root/packages/metadata/node_modules ./packages/metadata/node_modules
 COPY --from=install /root/packages/metadata/package.json ./packages/metadata/package.json
-COPY packages/metadata/src ./packages/metadata/src
+COPY --from=build /root/packages/metadata/build ./packages/metadata/build
 
 WORKDIR /root/packages/api
 CMD ["pnpm", "start"]
